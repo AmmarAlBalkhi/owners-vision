@@ -6,11 +6,22 @@ The skill follows the [Agent Skills directory format](https://agentskills.io/spe
 
 ## Agents with skill discovery
 
-Install the entire `owners-vision/` folder in your agent's skill directory. Keep the folder name and its relative resources. For example, with a project-local `.agents/skills/` directory:
+Install the entire `owners-vision/` folder in your agent's skill directory. Keep the folder name and its relative resources. From the repository root, these examples copy it into a project-local `.agents/skills/` directory. For another project, use that project's destination path.
+
+In Bash:
 
 ```bash
 mkdir -p .agents/skills && cp -r owners-vision .agents/skills/
 ```
+
+In PowerShell:
+
+```powershell
+New-Item -ItemType Directory -Force -Path .agents/skills | Out-Null
+Copy-Item -LiteralPath owners-vision -Destination .agents/skills/ -Recurse
+```
+
+Use a fresh destination. If the skill is already installed, preserve local changes before replacing it.
 
 Then select the skill by its `owners-vision` name. Environments that don't use the optional interface metadata in `agents/` can ignore it.
 
@@ -49,7 +60,7 @@ If only the skill folder is installed, `python owners-vision/scripts/check_visio
 | Exit code | Meaning |
 | --- | --- |
 | `0` | The vision bytes, the companion lock, and the accepted digest all agree. |
-| `1` | Verification failed. The JSON output gives the `reason`. |
+| `1` | Verification failed, or a required skill resource could not be read. The JSON output gives the `reason`. |
 | `2` | The command arguments are invalid. Usage goes to stderr, and stdout is empty. |
 
 | `reason` | Cause |

@@ -1,18 +1,18 @@
 # Owner's Vision
 
-**A pre-implementation gate for coding agents. Before each major step, the agent checks the work against the owner's locked vision. It records progress only with the owner's explicit permission.**
+**A pre-implementation gate for coding agents. The agent checks proposed work against the owner's locked vision and recorded checkpoints. Accomplishments are added only with the owner's explicit permission.**
 
 Created by [AmmarAlBalkhi](https://github.com/AmmarAlBalkhi) · MIT license · Python 3 standard library · [Agent Skills](https://agentskills.io/specification) format
 
-![Owner's Vision demo with three panels from recorded synthetic trials. 1, Gate: a proposal to discard tasks on restart conflicts with the locked vision, which requires tasks to persist, so the verdict is PAUSE. 2, Remind: an aligned next step gets PASS plus one reminder to record the previous step's verified results. 3, Record: after the owner explicitly authorizes it, one checkpoint line is appended, earlier bytes stay unchanged, and both digests are synced. Footer: 12 of 12 integrity checks and 6 of 6 CLI checks pass.](docs/demo.png)
+![Owner's Vision: move forward while keeping your intent intact. A conceptual vision document illustrates clear direction, protected progress, and owner permission before adding accomplishment lines.](docs/demo.png)
 
-<sub>Excerpts from recorded synthetic trials, not a live application. [Text version of this image](docs/demo.md).</sub>
+<sub>Conceptual workflow. [Text version and recorded examples](docs/demo.md).</sub>
 
 ## The problem
 
 Over a long project, an agent can drift. A reasonable-looking change might break something the owner already accepted, such as data that must survive a restart. The record of what is done can also get rewritten along the way.
 
-Owner's Vision gives the agent one fixed reference: the owner's vision file, locked by SHA-256. Before each major step, the agent runs a short gate against it. The vision changes only by appending, and only when the owner says so.
+Owner's Vision gives the agent one fixed reference: the owner's vision file, locked by SHA-256. Before new implementation, the agent runs a short gate against it. The vision changes only by appending, and only when the owner says so.
 
 ## How it works
 
@@ -22,7 +22,7 @@ Owner's Vision gives the agent one fixed reference: the owner's vision file, loc
 4. **Remind.** When a new major step begins and the previous step has verified results that aren't recorded yet, the agent adds one line: *Consider adding the previous step's verified accomplishments to Owner's Vision.*
 5. **Record.** Only after the owner explicitly authorizes it, the agent appends concise checkpoint lines. Every earlier byte stays unchanged, and only the declared digests are updated to match.
 
-Starting the next step, a gate PASS, silence, and "looks good" are not authorization. A pending reminder never blocks authorized work.
+Starting the next step, a gate PASS, silence, and "looks good" are not authorization. A pending reminder does not block otherwise authorized work that passes the gate.
 
 ## Try it in one minute
 
@@ -91,7 +91,7 @@ The skill reads its authority from your project's governing rules, such as the i
    Digest references to update after an authorized append: this accepted digest and the companion lock.
    ```
 
-Filenames are examples; use your own. Never regenerate the lock to make a failed check pass. A failure means the vision changed, so find out why. The [governing rules of a synthetic fixture](tests/fixtures/01-aligned-prior-accomplishment/AGENTS.md) show a complete binding.
+Filenames are examples; use your own. Never regenerate the lock to make a failed check pass. Find out why the check failed before proceeding. The [governing rules of a synthetic fixture](tests/fixtures/01-aligned-prior-accomplishment/AGENTS.md) show a complete binding.
 
 ## Evidence
 
