@@ -4,6 +4,35 @@ The skill follows the [Agent Skills directory format](https://agentskills.io/spe
 
 **Every route needs** file access to the project, Python 3 for the integrity check, and a way to launch a fresh independent read-only reviewer. If no reviewer is available, the gate returns PAUSE. No loading route relaxes the authorization rules.
 
+## One-command installation
+
+From your project directory, use the [Skills CLI](https://github.com/vercel-labs/skills):
+
+```bash
+npx skills add AmmarAlBalkhi/owners-vision --skill owners-vision --copy
+```
+
+The installer currently requires Node.js 22.20 or newer. Select your agent if prompted. `--copy` installs the complete skill without requiring symlinks. To choose an agent directly, add its `--agent` value from the table below. Keep the project scope; omit `--global` unless you want an installation shared across projects.
+
+Then [bind your project's vision and lock](../README.md#bind-your-project), and ask your agent to use `owners-vision` before the next implementation step. Installation alone does not create or approve a project vision, supply an independent reviewer, or authorize additions.
+
+The standalone skill and integrity helper need Python, not Node.js. Use the manual copy or ZIP route if you do not want the Node-based installer.
+
+### Installation evidence
+
+Tested on Windows with PowerShell, Node.js 24.19.0, and Skills CLI 1.7.1 on 2026-10-07. The test installed the public repository into an isolated project, selected the four targets below, and compared all six skill files byte for byte. Both installed copies' integrity helpers accepted the intact fixture and rejected the tampered fixture without changing either input. [Machine-readable receipt](../tests/results/installation.json).
+
+| Target | `--agent` value | Project destination | File installation | Full agent workflow |
+| --- | --- | --- | --- | --- |
+| Claude Code | `claude-code` | `.claude/skills/owners-vision/` | Verified on Windows | Not tested |
+| Gemini CLI | `gemini-cli` | `.agents/skills/owners-vision/` | Verified on Windows | Not tested |
+| OpenCode | `opencode` | `.agents/skills/owners-vision/` | Verified on Windows | Not tested |
+| Shared skill directory | `universal` | `.agents/skills/owners-vision/` | Verified on Windows | Depends on the client |
+
+Several targets share one installed copy. These results verify the installer's file placement and the Python helper; they do not establish that each agent discovers the skill, launches an independent reviewer, or follows every authorization rule. Linux, macOS, global installations, and other targets have not been tested here. The README's synthetic behavioral trials are separate evidence.
+
+To repeat the installation check with the same installer version, use `skills@1.7.1` in place of `skills`, select the targets above, and use a disposable project. The unversioned command resolves the current installer release. Either command fetches the repository's current default branch; the receipt records the source commit tested here.
+
 ## Agents with skill discovery
 
 Install the entire `owners-vision/` folder in your agent's skill directory. Keep the folder name and its relative resources. From the repository root, these examples copy it into a project-local `.agents/skills/` directory. For another project, use that project's destination path.

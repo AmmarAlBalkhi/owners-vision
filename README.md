@@ -60,6 +60,16 @@ The second command exits with code `1` and changes no files. At this point an ag
 
 ## Use it with your agent
 
+From the project where you want to use the skill, install it with the [Skills CLI](https://github.com/vercel-labs/skills):
+
+```bash
+npx skills add AmmarAlBalkhi/owners-vision --skill owners-vision --copy
+```
+
+This route needs Node.js 22.20 or newer. Select your agent if prompted, then [bind your project](#bind-your-project). The installer copies the whole skill and its resources into the agent's project skill directory. The manual and ZIP routes below need no Node.js.
+
+File installation for Claude Code, Gemini CLI, OpenCode, and the shared skill directory was checked on Windows with Skills CLI 1.7.1. Every packaged file remained byte-identical, and the installed integrity helper passed valid and tampered-input checks. Agent execution on those hosts has not been tested. See [installation evidence and support limits](docs/agent-usage.md#installation-evidence).
+
 | Your setup | What to do |
 | --- | --- |
 | Agent with skill discovery | Copy the `owners-vision/` folder into the agent's skill directory, such as `.agents/skills/owners-vision/`, then select `owners-vision`. |
