@@ -4,9 +4,9 @@
 
 Created by [AmmarAlBalkhi](https://github.com/AmmarAlBalkhi) · MIT license · Python 3 standard library · [Agent Skills](https://agentskills.io/specification) format
 
-![Owner's Vision: move forward while keeping your intent intact. A conceptual vision document illustrates clear direction, protected progress, and owner permission before adding accomplishment lines.](docs/demo.png)
+![Owner's Vision working flow: before implementation, the Hand returns PASS for aligned work or PAUSE for a checkpoint conflict. At the next major step it can remind the owner about verified accomplishments. After explicit authorization, the agent adds concise checkpoint lines and preserves all earlier text.](docs/demo.svg)
 
-<sub>Conceptual workflow. [Text version and recorded examples](docs/demo.md).</sub>
+<sub>Illustrative workflow. [Text version and recorded examples](docs/demo.md) · [PNG for sharing](docs/demo.png).</sub>
 
 ## The problem
 

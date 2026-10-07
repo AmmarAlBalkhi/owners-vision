@@ -1,6 +1,6 @@
 # Owner's Vision in action
 
-The [demo image](demo.png) illustrates the value of Owner's Vision: **move forward while keeping your intent intact**. It is a conceptual workflow, not an application screenshot.
+The [demo image](demo.png) shows what you get while working with Owner's Vision: **your agent moves forward, and you keep control**. It illustrates a synthetic task project, with concise examples of the messages and checkpoint lines. It is not an application screenshot. An [editable SVG](demo.svg) keeps the lettering crisp.
 
 ## Clear direction
 
@@ -14,7 +14,15 @@ Verified accomplishments can become checkpoints that future work must preserve. 
 
 At the beginning of the next major step, the Hand can give one brief reminder about the previous step's verified, unrecorded accomplishments. The owner explicitly authorizes adding them in their own words. The agent writes concise facts and synchronizes the declared digests.
 
-The illustration shows a locked vision, preserved checkpoints, and a separate owner-approved addition. It represents the skill's intended workflow; the recorded evidence below shows its bounded trials.
+The picture follows three interactions:
+
+| When | What you get |
+| --- | --- |
+| Before implementation | A PASS for aligned work, or a PAUSE when a proposal discards tasks that must survive restarts. PASS permits only otherwise authorized work. |
+| At the next major step | One short reminder about the preceding step's verified, unrecorded search accomplishments. Only the addition waits for permission. |
+| After you authorize adding them | Concise accomplishment lines become checkpoints. All earlier vision text stays intact. |
+
+The picture's shortened responses and checkpoint are illustrative summaries, rather than verbatim trial transcripts. The reminder and verdict format follow the skill. Exact recorded evidence is below.
 
 ## Recorded examples
 
