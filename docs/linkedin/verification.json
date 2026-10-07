@@ -1,0 +1,20 @@
+{
+  "title": "Owner's Vision \u2014 an offline app example",
+  "creator": "AmmarAlBalkhi",
+  "illustrated_example": true,
+  "duration_seconds": 27,
+  "width": 1080,
+  "height": 1350,
+  "fps": 24,
+  "decoded_frames": 648,
+  "codec": "H.264",
+  "audio": "None; on-screen text",
+  "bitrate_kbps": 1492,
+  "video_bytes": 5035647,
+  "sha256": "2cde847ea91b100c30df0d0f0cbda5b5a13e0366edce90b1f9ee56d5acef8c27",
+  "decode_exit_code": 0,
+  "scene_text_bounds": "All five scenes within the content margin",
+  "source": "render-demo.js",
+  "human_faces": false,
+  "requirements_source": "https://www.linkedin.com/help/linkedin/answer/a548372"
+}

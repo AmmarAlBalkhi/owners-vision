@@ -1,8 +1,12 @@
 # Owner's Vision
 
-**A pre-implementation gate for coding agents. The agent checks proposed work against the owner's locked vision and recorded checkpoints. Accomplishments are added only with the owner's explicit permission.**
+**Keep AI work tied to what you asked for and what already works.**
+
+Owner's Vision is a set of instructions for AI coding tools. Before new work starts, it tells the agent to compare the plan with your saved requirements and completed work. Conflicts pause implementation. Only you can authorize adding accomplishments to the record.
 
 Created by [AmmarAlBalkhi](https://github.com/AmmarAlBalkhi) · MIT license · Python 3 standard library · [Agent Skills](https://agentskills.io/specification) format
+
+Start with the [27-second illustrated example](docs/linkedin/README.md): an offline app, a conflicting proposal, and a check before the change is made.
 
 ![Owner's Vision working flow: before implementation, the Hand returns PASS for aligned work or PAUSE for a checkpoint conflict. At the next major step it can remind the owner about verified accomplishments. After explicit authorization, the agent adds concise checkpoint lines and preserves all earlier text.](docs/demo.svg)
 
