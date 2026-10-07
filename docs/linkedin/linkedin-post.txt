@@ -1,16 +1,20 @@
-Before an AI changes your project, does its next step still fit your vision?
+As an AI agent keeps iterating, a project can gradually drift away from your original vision—even when each individual step seems reasonable.
 
-I built Owner’s Vision: a skill that tells AI coding agents to check new work against your vision and verified progress.
+I built Owner’s Vision to keep your requirements and verified progress at the centre of each new step.
 
-PASS: the plan fits your requirements and preserves verified progress. Already-authorized work can continue.
+It’s an open-source skill for AI coding agents. Before implementation, it requires the agent to confirm the saved vision is intact and get an independent review of the proposed work.
 
-FAIL → PAUSE: a conflict, missing proof, or incomplete review stops implementation. The agent reports the blocker to you.
+✅ PASS: The plan fits your vision and preserves completed work. Work you’ve already authorized can continue.
 
-The skill requires a vision-integrity check and a fresh independent review before PASS. You remain in control of what gets authorized.
+🛑 FAIL → PAUSE: Something conflicts or cannot be verified. The agent is instructed to pause and explain the blocker.
+
+It may be especially useful for vibe coders moving quickly through iterations who want a consistent check on the project’s direction.
 
 The 24-second video shows the decision flow.
 
 Free and open source under MIT:
 https://github.com/AmmarAlBalkhi/owners-vision
+
+How do you keep your agents aligned as a project grows?
 
 #AITooling #AgentSkills
