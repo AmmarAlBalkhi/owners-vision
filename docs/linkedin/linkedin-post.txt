@@ -1,16 +1,16 @@
-You ask an AI to build an app that works offline. Later, it suggests a change that requires internet.
+Before an AI changes your project, does its next step still fit your vision?
 
-I built Owner’s Vision to help catch that kind of drift.
+I built Owner’s Vision: a skill that tells AI coding agents to check new work against your vision and verified progress.
 
-It’s a set of instructions for your AI coding tool. Before new work starts, it tells the AI to check the plan against your saved requirements and what already works.
+PASS: the plan fits your requirements and preserves verified progress. Already-authorized work can continue.
 
-It also reminds you to record finished, verified work. New lines are added only with your explicit permission. Earlier lines stay unchanged.
+FAIL → PAUSE: a conflict, missing proof, or incomplete review stops implementation. The agent reports the blocker to you.
 
-The 27-second demo shows a simple example.
+The skill requires a vision-integrity check and a fresh independent review before PASS. You remain in control of what gets authorized.
+
+The 24-second video shows the decision flow.
 
 Free and open source under MIT:
 https://github.com/AmmarAlBalkhi/owners-vision
-
-Have you had an AI lose track of what you originally asked for?
 
 #AITooling #AgentSkills
