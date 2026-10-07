@@ -1,0 +1,4 @@
+interface:
+  display_name: "Owner's Vision"
+  short_description: "Protect owner intent and achieved checkpoints"
+  default_prompt: "Use $owners-vision to run the Hand of the Owner against this project's locked vision before the next major step."

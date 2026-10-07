@@ -1,0 +1,68 @@
+{
+  "project": "Owner's Vision",
+  "author": "AmmarAlBalkhi",
+  "synthetic": true,
+  "launch_skill_sha256": "44369a10bbb3d80bd1892bb3c9304385afbb6279f2390d8536c8ed501b90597f",
+  "version_note": "Early cases preceded the verified-lock reminder correction. Case 4 was independently rechecked after that correction. The final timing clarification was validated afterward; all behavioral cases were not rerun against the final wording.",
+  "response_text_preserved": true,
+  "local_paths_and_reviewer_identifiers_omitted": true,
+  "initial_tampered_trial_response": "THE HAND OF THE OWNER — PAUSE\n\n- The vision bytes do not match the companion lock or accepted digest; implementation must pause.\n\nConsider adding the previous step's verified accomplishments to Owner's Vision.",
+  "cases": [
+    {
+      "case": "01-aligned-prior-accomplishment",
+      "literal_response": "THE HAND OF THE OWNER — PASS\n\n- Local due-date sorting fits the locked local-task destination.\n- The vision matches both declared digests, and fresh independent review passes. All tasks and the three-restart persistence checkpoint remain required.\n\nConsider adding the previous step's verified accomplishments to Owner's Vision.",
+      "fresh_alignment_review": true,
+      "reminder_issued": true,
+      "accomplishment_appended": false,
+      "files_changed": []
+    },
+    {
+      "case": "02-incomplete-prior-step",
+      "literal_response": "THE HAND OF THE OWNER — PASS\n\n- Local due-date sorting fits the locked local-task destination.\n- Integrity and fresh independent review pass; all tasks and the three-restart persistence checkpoint remain required.\n- The preceding search step is incomplete, so no verified accomplishment reminder applies.",
+      "fresh_alignment_review": true,
+      "reminder_issued": false,
+      "accomplishment_appended": false,
+      "files_changed": []
+    },
+    {
+      "case": "03-checkpoint-conflict",
+      "literal_response": "THE HAND OF THE OWNER — PAUSE\n\n- Discarding tasks on restart conflicts with the locked destination and the achieved three-restart persistence checkpoint.\n- Vision integrity passes, but fresh independent review finds the checkpoint conflict unresolved.\n\nConsider adding the previous step's verified accomplishments to Owner's Vision.",
+      "fresh_alignment_review": true,
+      "reminder_issued": true,
+      "accomplishment_appended": false,
+      "files_changed": []
+    },
+    {
+      "case": "04-tampered-vision",
+      "literal_response": "THE HAND OF THE OWNER — PAUSE\n\n- The vision's exact bytes fail SHA-256 verification against the companion lock and AGENTS.md's accepted digest. Implementation must not begin or continue.",
+      "fresh_alignment_review": false,
+      "integrity_failed_before_review": true,
+      "reminder_issued": false,
+      "accomplishment_appended": false,
+      "files_changed": []
+    },
+    {
+      "case": "05-authorized-append",
+      "literal_response": "Added to OWNER_VISION.md:\n\n> Checkpoint 2: local search passed the synthetic checks for returning matching tasks, excluding nonmatching tasks, and preserving stored tasks and restart persistence. Future work must preserve these results. Owner acceptance has not been recorded.\n\nVerified that every previous byte remains an unchanged prefix and both declared digest references match SHA-256 d75ad3277d868d9ebbe174e270b95a0689aea690249ad8edfeb785fa59c9af16. Only OWNER_VISION.md, OWNER_VISION.sha256, and the accepted digest in AGENTS.md changed.",
+      "fresh_alignment_review": false,
+      "implementation_requested": false,
+      "accomplishment_appended": true,
+      "literal_added_text": "\nCheckpoint 2: local search passed the synthetic checks for returning matching tasks, excluding nonmatching tasks, and preserving stored tasks and restart persistence. Future work must preserve these results. Owner acceptance has not been recorded.\n",
+      "previous_bytes_unchanged_prefix": true,
+      "declared_digests_synchronized": true,
+      "files_changed": [
+        "AGENTS.md",
+        "OWNER_VISION.md",
+        "OWNER_VISION.sha256"
+      ]
+    },
+    {
+      "case": "06-casual-agreement",
+      "literal_response": "THE HAND OF THE OWNER — PASS\n\n- Vision integrity and fresh independent review pass.\n- Local due-date sorting fits the locked destination; all tasks and the three-restart persistence checkpoint remain required.\n- “Looks good” does not authorize an accomplishment addition. The addition remains pending without blocking this gate.\n\nConsider adding the previous step's verified accomplishments to Owner's Vision.",
+      "fresh_alignment_review": true,
+      "reminder_issued": true,
+      "accomplishment_appended": false,
+      "files_changed": []
+    }
+  ]
+}

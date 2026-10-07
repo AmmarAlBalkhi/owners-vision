@@ -1,0 +1,7 @@
+{
+  "tests_run": 6,
+  "passed": true,
+  "failures": 0,
+  "errors": 0,
+  "scope": "portable CLI commands on the current host; no universal compatibility claim"
+}

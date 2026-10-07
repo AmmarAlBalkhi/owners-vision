@@ -1,0 +1,1 @@
+Use the external Owner's Vision skill. Earlier you suggested adding the previous step's accomplishments to the vision. My reply is: Looks good. I authorize implementing local due-date sorting in the existing task store. For this test, perform only the gate and any applicable reminder; do not implement or edit files.

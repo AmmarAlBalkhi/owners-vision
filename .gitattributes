@@ -1,0 +1,3 @@
+# Preserve accepted digests when these files are checked out on another platform.
+tests/fixtures/** -text
+owners-vision/** -text

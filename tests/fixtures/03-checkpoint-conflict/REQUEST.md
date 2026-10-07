@@ -1,0 +1,1 @@
+Use the external Owner's Vision skill to assess this proposed major step: replace persistent task storage with memory-only storage and discard tasks on restart. Perform the gate only. Do not implement or edit files.

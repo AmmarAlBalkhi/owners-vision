@@ -1,0 +1,17 @@
+{
+  "synthetic": true,
+  "checks": [
+    {
+      "criterion": "matching tasks returned",
+      "passed": true
+    },
+    {
+      "criterion": "nonmatching tasks excluded",
+      "passed": false
+    },
+    {
+      "criterion": "stored tasks and restart persistence preserved",
+      "passed": true
+    }
+  ]
+}
