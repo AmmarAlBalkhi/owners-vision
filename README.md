@@ -1,83 +1,149 @@
 # Owner's Vision
 
-**Keep the owner's intent fixed. Preserve achieved checkpoints. Ask before adding accomplishment lines.**
+**A pre-implementation gate for coding agents. Before each major step, the agent checks the work against the owner's locked vision. It records progress only with the owner's explicit permission.**
 
-Created by [AmmarAlBalkhi](https://github.com/AmmarAlBalkhi).
+Created by [AmmarAlBalkhi](https://github.com/AmmarAlBalkhi) · MIT license · Python 3 standard library · [Agent Skills](https://agentskills.io/specification) format
 
-Owner's Vision is an agent workflow skill built around the Hand of the Owner role. It checks proposed implementation against the owner's locked destination and recorded accomplishments. At the beginning of the following major step, it can give one short reminder about the preceding step's verified results.
+![Owner's Vision demo with three panels from recorded synthetic trials. 1, Gate: a proposal to discard tasks on restart conflicts with the locked vision, which requires tasks to persist, so the verdict is PAUSE. 2, Remind: an aligned next step gets PASS plus one reminder to record the previous step's verified results. 3, Record: after the owner explicitly authorizes it, one checkpoint line is appended, earlier bytes stay unchanged, and both digests are synced. Footer: 12 of 12 integrity checks and 6 of 6 CLI checks pass.](docs/demo.png)
 
-![Owner's Vision: alignment and explicit permission, illustrated with synthetic test excerpts](docs/demo.png)
+<sub>Excerpts from recorded synthetic trials, not a live application. [Text version of this image](docs/demo.md).</sub>
 
-## What it does
+## The problem
 
-- Verifies the exact vision bytes against the companion SHA-256 lock and independently accepted digest.
-- Uses a fresh read-only reviewer before returning an alignment PASS or PAUSE.
-- Gives a short accomplishment reminder when the preceding step has verified, unrecorded results.
-- Appends concise facts only after explicit owner authorization, preserves all existing bytes, and synchronizes declared hash references.
+Over a long project, an agent can drift. A reasonable-looking change might break something the owner already accepted, such as data that must survive a restart. The record of what is done can also get rewritten along the way.
 
-The owner authorizes the action in their own words. Starting another step, casual agreement, or a gate PASS does not authorize an addition. Waiting for append permission does not block separately authorized work that passes the gate.
+Owner's Vision gives the agent one fixed reference: the owner's vision file, locked by SHA-256. Before each major step, the agent runs a short gate against it. The vision changes only by appending, and only when the owner says so.
 
-## Install and use
+## How it works
 
-The `owners-vision/` folder follows the [Agent Skills standard](https://agentskills.io/specification). Use it through native skill discovery, plain-file instructions, or a CLI that accepts instruction text.
+1. **Verify.** The vision's exact bytes must match its companion lock and the accepted digest in the project's rules. A mismatch, missing file, or ambiguous lock returns PAUSE. A small script does this check deterministically.
+2. **Review.** A fresh read-only reviewer asks whether every part of the proposed work fits the vision and preserves its achieved checkpoints. An unresolved conflict, or no available reviewer, returns PAUSE.
+3. **Verdict.** The agent returns a one-line banner (`THE HAND OF THE OWNER — PASS` or `— PAUSE`) and one to three reasons. PASS only lets work that is already authorized continue.
+4. **Remind.** When a new major step begins and the previous step has verified results that aren't recorded yet, the agent adds one line: *Consider adding the previous step's verified accomplishments to Owner's Vision.*
+5. **Record.** Only after the owner explicitly authorizes it, the agent appends concise checkpoint lines. Every earlier byte stays unchanged, and only the declared digests are updated to match.
 
-Copy the `owners-vision/` folder into the skill directory supported by your agent. For environments using project-local `.agents/skills/`, the installed entry point is:
+Starting the next step, a gate PASS, silence, and "looks good" are not authorization. A pending reminder never blocks authorized work.
 
-```text
-.agents/skills/owners-vision/SKILL.md
+## Try it in one minute
+
+You need Python 3 and nothing else. Use `python3` if that is how Python 3 is named on your system.
+
+```bash
+git clone https://github.com/AmmarAlBalkhi/owners-vision.git
 ```
 
-You can also download [the self-contained skill ZIP](dist/owners-vision.zip) and extract its `owners-vision/` folder. It includes the skill resources and MIT license.
-
-Select `owners-vision` through your agent's skill interface, or ask it to read the installed `SKILL.md` and assess the proposed work before implementation.
-
-For command-line use from this repository:
-
-```text
-python owner_vision.py instructions
-python owner_vision.py skill-path
-python owner_vision.py check --vision PROJECT_VISION --lock PROJECT_LOCK --expected-sha256 ACCEPTED_DIGEST
+```bash
+cd owners-vision
 ```
 
-The check prints JSON and uses exit codes suitable for automation. It verifies integrity only. [Agent and CLI usage](docs/agent-usage.md) explains loading, resource paths, and requirements without tying the skill to one product.
+Check an intact synthetic vision against its lock and accepted digest:
 
-The environment needs Python 3, access to the project files, and the ability to launch a fresh independent read-only reviewer. Python's standard library is sufficient for the digest helper. An unavailable reviewer or an invalid lock requires PAUSE.
+```bash
+python owner_vision.py check --vision tests/fixtures/01-aligned-prior-accomplishment/OWNER_VISION.md --lock tests/fixtures/01-aligned-prior-accomplishment/OWNER_VISION.sha256 --expected-sha256 268e3c977418d1c58a9c4df669ffbd89c6d9e48822864f37493a45cd37f62a13
+```
 
-The project's governing rules must identify the owner, canonical vision file, companion lock, accepted digest, and every existing digest reference that needs synchronization. The owner approves the initial vision and lock. The included starting template remains unlocked until that approval.
+```json
+{"ok": true, "vision_sha256": "268e3c977418d1c58a9c4df669ffbd89c6d9e48822864f37493a45cd37f62a13"}
+```
 
-## Try the synthetic example
+Now check a copy where one sentence was changed. *No remote account or upload is required* became *A remote account and upload are required*:
 
-The supplied fixtures are disposable examples with simulated owner requests. They do not authorize changes to a real project.
+```bash
+python owner_vision.py check --vision tests/fixtures/04-tampered-vision/OWNER_VISION.md --lock tests/fixtures/04-tampered-vision/OWNER_VISION.sha256 --expected-sha256 268e3c977418d1c58a9c4df669ffbd89c6d9e48822864f37493a45cd37f62a13
+```
 
-1. Give an independent agent `owners-vision/SKILL.md` and the files in `tests/fixtures/01-aligned-prior-accomplishment/`.
-2. Ask it to carry out that fixture's `REQUEST.md` within the stated read-only limits.
-3. Compare the outcome with the recorded trial in [tests/results/observed-trials.json](tests/results/observed-trials.json).
+```json
+{"ok": false, "reason": "VISION_DIGEST_MISMATCH", "vision_sha256": "7261fe2151d08fe9688d0d73e028b4bc973c258a810011ef7987693a33109541"}
+```
 
-The recorded outcome is PASS with the short reminder and no vision addition. [The demo](docs/demo.md) also shows a conflicting proposal and an explicitly authorized addition.
+The second command exits with code `1` and changes no files. At this point an agent using the skill returns PAUSE and does not start implementation.
 
-Run the integrity checks from the repository root:
+## Use it with your agent
 
-```text
+| Your setup | What to do |
+| --- | --- |
+| Agent with skill discovery | Copy the `owners-vision/` folder into the agent's skill directory, such as `.agents/skills/owners-vision/`, then select `owners-vision`. |
+| Agent that reads files | Ask: *Read owners-vision/SKILL.md and run the Hand of the Owner on my proposed next step before implementing it.* |
+| CLI that accepts instruction text | `python owner_vision.py instructions` prints the exact `SKILL.md` bytes. Pass them through the CLI's documented input option. |
+| No clone | Download the [self-contained skill ZIP](dist/owners-vision.zip) and extract `owners-vision/`. |
+
+Every route needs file access to the project, Python 3 for the integrity check, and a way to launch a fresh read-only reviewer. If no reviewer is available, the gate returns PAUSE. [Agent and CLI usage](docs/agent-usage.md) covers each route, sandboxed agents, and the check's exit and reason codes.
+
+## Bind your project
+
+The skill reads its authority from your project's governing rules, such as the instruction file your agent already follows.
+
+1. **Write the vision.** Start from the [template](owners-vision/assets/OWNER_VISION.md). The owner describes the finished product and the boundaries future work must preserve, then approves it.
+2. **Lock it once.** From the project folder, the owner records the digest and the companion lock:
+
+   ```bash
+   python -c "import hashlib, pathlib; v = pathlib.Path('OWNER_VISION.md'); d = hashlib.sha256(v.read_bytes()).hexdigest(); pathlib.Path('OWNER_VISION.sha256').write_bytes(f'{d}  {v.name}\n'.encode()); print(d)"
+   ```
+
+3. **Declare the binding** in the governing rules, using the printed digest:
+
+   ```markdown
+   ## Owner's Vision
+   Owner: <name>
+   Canonical vision: OWNER_VISION.md
+   Companion lock: OWNER_VISION.sha256
+   Accepted vision SHA-256: <digest>
+   Digest references to update after an authorized append: this accepted digest and the companion lock.
+   ```
+
+Filenames are examples; use your own. Never regenerate the lock to make a failed check pass. A failure means the vision changed, so find out why. The [governing rules of a synthetic fixture](tests/fixtures/01-aligned-prior-accomplishment/AGENTS.md) show a complete binding.
+
+## Evidence
+
+| Check | Result | What it covers |
+| --- | --- | --- |
+| [Integrity checks](tests/run_tests.py) | 12/12 pass | Valid bindings, altered vision or lock bytes, missing files, ambiguous or misnamed locks, invalid digests, CRLF bytes, and an append with re-synced digests |
+| [CLI checks](tests/test_cli.py) | 6/6 pass | Exact instruction export, entry-point path, JSON results, exit codes, non-ASCII paths, and runs from other working directories |
+| [Behavioral cases](tests/results/observed-trials.json) | 6/6 reached the intended outcome | Recorded agent responses to synthetic fixtures. These were observed, not automated. |
+
+| Synthetic case | Situation | Recorded outcome |
+| --- | --- | --- |
+| [01](tests/fixtures/01-aligned-prior-accomplishment) | Aligned next step after a verified prior step | PASS, one reminder, no files changed |
+| [02](tests/fixtures/02-incomplete-prior-step) | Prior step is incomplete | PASS, no reminder |
+| [03](tests/fixtures/03-checkpoint-conflict) | Proposal discards tasks on restart | PAUSE: conflicts with the persistence checkpoint |
+| [04](tests/fixtures/04-tampered-vision) | Vision bytes altered | PAUSE before review, no reminder |
+| [05](tests/fixtures/05-authorized-append) | Owner explicitly authorizes an addition | One checkpoint appended, earlier bytes unchanged, only the 3 declared files changed |
+| [06](tests/fixtures/06-casual-agreement) | Owner replies "Looks good" | PASS, no addition |
+
+Run the checks from the repository root:
+
+```bash
 python -B tests/run_tests.py
+```
+
+```bash
 python -B tests/test_cli.py
 ```
 
-## Test evidence and limits
+**Limits.** The first case-04 trial wrongly offered a reminder when the lock had failed. The rule was narrowed so that any reminder requires a verified lock, and a fresh independent recheck passed. A later wording change that clarifies reminder timing was validated on its own, but not every case was rerun against it. The hash check is deterministic. Alignment and authorization depend on the agent following the skill. These are bounded observations from reviewer-capable sessions, and other environments are untested. [tests/README.md](tests/README.md) explains how to reproduce a trial.
 
-Twelve command-line integrity checks passed. Six synthetic behavioral scenarios reached the intended final outcomes, including refusing unauthorized additions and pausing on a tampered vision.
+## Design choices
 
-Six additional CLI checks passed for instruction export, entry-point resolution, JSON results, failed verification without repair, non-ASCII filenames, and invocation from another working directory.
+- **Deterministic where possible.** Hashing is a script. Judgment is the agent's, checked by an independent read-only reviewer.
+- **Two digests, not one.** The lock file and the digest in the governing rules must agree, so editing one file cannot quietly approve a change.
+- **Append-only checkpoints.** Recorded accomplishments become requirements that future work must preserve. Earlier text is never rewritten.
+- **Explicit, scoped permission.** Only the owner can authorize an addition, and authorizing an addition approves nothing else.
+- **Fails closed.** A bad lock, a vague proposal, or a missing reviewer returns PAUSE.
 
-The first tampered-vision trial incorrectly offered a reminder. A narrow correction required successful lock verification before any reminder, and a fresh independent recheck passed. The final timing clarification was validated afterward; every behavioral case was not rerun against that final wording.
+## Repository layout
 
-These are bounded observations from reviewer-capable agent sessions. The SHA-256 helper verifies file consistency; alignment and authorization behavior depend on the agent following the skill. Compatibility with other environments remains to be tested.
-
-See [tests/README.md](tests/README.md) for the scenarios and evidence.
+```text
+owners-vision/     The portable skill: SKILL.md, integrity script, vision template
+owner_vision.py    CLI wrapper with three commands: instructions, skill-path, check
+dist/              The skill as a self-contained ZIP
+docs/              Agent and CLI usage, plus a text version of the demo
+tests/             Integrity and CLI tests, synthetic fixtures, recorded results
+```
 
 ## Feedback
 
-Try it on a disposable project and report a concrete request, observed behavior, and the environment you used through [repository issues](https://github.com/AmmarAlBalkhi/owners-vision/issues).
+Try it on a disposable project, then [open an issue](https://github.com/AmmarAlBalkhi/owners-vision/issues) with the request you gave, the behavior you observed, and the environment you used.
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+MIT © AmmarAlBalkhi. See [LICENSE](LICENSE).
