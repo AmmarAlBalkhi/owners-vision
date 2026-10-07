@@ -1,0 +1,25 @@
+{
+  "title": "Owner's Vision \u2014 PASS / FAIL",
+  "creator": "AmmarAlBalkhi",
+  "content_type": "Animated decision workflow",
+  "project_scenarios": false,
+  "duration_seconds": 24,
+  "width": 1080,
+  "height": 1350,
+  "fps": 24,
+  "decoded_frames": 576,
+  "codec": "H.264",
+  "audio": "None; on-screen text",
+  "average_file_bitrate_kbps": 1491,
+  "video_bytes": 4472069,
+  "sha256": "1884f3aafdc4422f37751e91318d7d653b51b61e9b09860dcc473f7d3e153021",
+  "decode_exit_code": 0,
+  "scene_text_bounds": "All four scenes within the content margin",
+  "source": "render-demo.js",
+  "human_faces": false,
+  "verdict_mapping": {
+    "PASS": "Already-authorized work may continue after both checks pass",
+    "FAIL": "Failed or incomplete check; the skill verdict is PAUSE"
+  },
+  "requirements_source": "https://www.linkedin.com/help/linkedin/answer/a548372"
+}

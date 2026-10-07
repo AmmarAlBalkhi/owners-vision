@@ -1,0 +1,75 @@
+{
+  "tested_on": "2026-10-07",
+  "environment": {
+    "os": "Windows",
+    "shell": "PowerShell",
+    "node": "24.19.0",
+    "skills_cli": "1.7.1",
+    "python": "3.14.6"
+  },
+  "source": "https://github.com/AmmarAlBalkhi/owners-vision",
+  "source_commit": "0d73a7a6583ba0553e5d3a145d3cea263182e5df",
+  "command": "npx --yes skills@1.7.1 add AmmarAlBalkhi/owners-vision --skill owners-vision --agent universal claude-code gemini-cli opencode --copy --yes",
+  "telemetry_disabled": true,
+  "discovery": {
+    "count": 1,
+    "name": "owners-vision"
+  },
+  "source_manifest": "Six tracked files in owners-vision/; generated Python cache files are not part of the package.",
+  "destinations": [
+    {
+      "destination": ".agents/skills/owners-vision",
+      "six_packaged_files_byte_identical": true,
+      "helper_checks": [
+        {
+          "fixture": "01-aligned-prior-accomplishment",
+          "exit_code": 0,
+          "output": {
+            "ok": true,
+            "vision_sha256": "268e3c977418d1c58a9c4df669ffbd89c6d9e48822864f37493a45cd37f62a13"
+          },
+          "inputs_unchanged": true
+        },
+        {
+          "fixture": "04-tampered-vision",
+          "exit_code": 1,
+          "output": {
+            "ok": false,
+            "reason": "VISION_DIGEST_MISMATCH",
+            "vision_sha256": "7261fe2151d08fe9688d0d73e028b4bc973c258a810011ef7987693a33109541"
+          },
+          "inputs_unchanged": true
+        }
+      ]
+    },
+    {
+      "destination": ".claude/skills/owners-vision",
+      "six_packaged_files_byte_identical": true,
+      "helper_checks": [
+        {
+          "fixture": "01-aligned-prior-accomplishment",
+          "exit_code": 0,
+          "output": {
+            "ok": true,
+            "vision_sha256": "268e3c977418d1c58a9c4df669ffbd89c6d9e48822864f37493a45cd37f62a13"
+          },
+          "inputs_unchanged": true
+        },
+        {
+          "fixture": "04-tampered-vision",
+          "exit_code": 1,
+          "output": {
+            "ok": false,
+            "reason": "VISION_DIGEST_MISMATCH",
+            "vision_sha256": "7261fe2151d08fe9688d0d73e028b4bc973c258a810011ef7987693a33109541"
+          },
+          "inputs_unchanged": true
+        }
+      ]
+    }
+  ],
+  "agent_workflow_execution": "Not run; this verifies file placement, resource preservation, and the installed integrity helper only.",
+  "other_operating_systems": "Not tested",
+  "global_installation": false,
+  "core_skill_sha256": "44369a10bbb3d80bd1892bb3c9304385afbb6279f2390d8536c8ed501b90597f"
+}
