@@ -4,7 +4,7 @@
 
 Owner's Vision helps AI coding agents keep long projects aligned with your requirements and completed work. **The Hand of the Owner** checks each proposed step against that saved record and pauses implementation when something conflicts or cannot be verified.
 
-Created by [Ammar Al Balkhi](https://github.com/ammarbalkhi) · [MIT](LICENSE) · [v0.1.0](https://github.com/ammarbalkhi/owners-vision/releases/tag/v0.1.0) · Early release
+Created by [Ammar Al Balkhi](https://github.com/ammarbalkhi) · [MIT](LICENSE) · [v0.1.1](https://github.com/ammarbalkhi/owners-vision/releases/tag/v0.1.1) · Early release
 
 ![Keep AI work aligned with your vision and what already works. The Hand returns PASS or PAUSE before new work. Check, remind, and add accomplishment lines only with your permission.](docs/social-preview.png)
 
@@ -31,7 +31,7 @@ Select your agent if prompted. This [Skills CLI](https://github.com/vercel-labs/
 
 ## First use
 
-Ask your agent to use Owner's Vision for this project. Tell it **what the finished project should do and what future work must preserve**. If you are unsure, the agent helps clarify the destination and drafts a vision for your approval.
+Ask your agent to use Owner's Vision for this project. Describe **the finished result you want**: who it's for, what people should be able to do, what must work for you to consider it complete, and any important limits. Write it in chat or share a Markdown (.md) file with your full vision or plan. Rough notes are fine; the agent helps clarify the destination and drafts a vision for your approval.
 
 Once you approve the vision and initial setup, the agent handles the files, integrity lock and project rule that requires the Hand before implementation. You do not need to calculate hashes yourself. Existing approvals are reused; an existing vision is checked before any setup changes.
 

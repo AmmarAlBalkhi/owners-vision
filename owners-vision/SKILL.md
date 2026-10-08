@@ -15,6 +15,8 @@ After any agent-managed installation or update, read the installed copy and chec
 
 Inspect the governing rules, approved vision, companion lock, accepted digest, and required Hand instruction. If initial setup is incomplete, follow [setup](references/setup.md) and automatically finish the work covered by existing, applicable owner approval. Handle files and hashes for the owner. If approval is missing or setup was explicitly stopped, report what is missing and ask one short question to authorize or resume it; do not repeat an answered question. An update request alone does not cancel a previous stop, read-only, or explicit install-only restriction.
 
+For a project without a vision, use the [first-use invitation](references/setup.md#first-use-invitation) to gather the desired end result and details, with the option to provide a Markdown (.md) vision or plan. Use information already supplied before asking for more.
+
 Report installation status and project readiness separately and briefly: ready for Hand checks, setup incomplete with its missing prerequisite, or blocked by an established integrity failure. Verify a complete binding without changing it. Never treat a failed established lock as initial setup or regenerate it to obtain readiness. A file-copy installer may not execute these instructions; the agent handling installation or update must perform this handoff.
 
 Incomplete setup does not reopen an owner-approved destination. On a conflicting implementation request, return PAUSE with the conflict and missing prerequisites; do not propose replacement wording. If the owner says wait or stop, preserve the current state. A missing or mismatched previously established lock is a verification failure, not a fresh-setup opportunity.
