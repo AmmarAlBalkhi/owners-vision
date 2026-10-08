@@ -80,7 +80,7 @@ python owner_vision.py skill-path
 
 ## Sandboxed or remote agents
 
-Transfer the complete skill folder, or [the self-contained ZIP](../dist/owners-vision.zip), along with the relevant project files, into the agent's filesystem. Keep relative paths, and use that environment's actual project binding.
+Transfer the complete skill folder, or [the self-contained ZIP](https://github.com/ammarbalkhi/owners-vision/releases/latest/download/owners-vision.zip), along with the relevant project files, into the agent's filesystem. Keep relative paths, and use that environment's actual project binding.
 
 ## Integrity check reference
 

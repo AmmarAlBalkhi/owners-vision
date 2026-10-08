@@ -6,7 +6,7 @@ Owner's Vision is a set of instructions for AI coding tools. Before new work sta
 
 Created by [Ammar Al Balkhi](https://github.com/ammarbalkhi) · MIT license · Python 3 standard library · [Agent Skills](https://agentskills.io/specification) format
 
-[![Skills CLI install count](https://skills.sh/b/ammarbalkhi/owners-vision "Installs recorded by skills.sh; excludes manual copies and direct GitHub downloads")](https://skills.sh/ammarbalkhi/owners-vision)
+[![ZIP downloads](https://img.shields.io/github/downloads/ammarbalkhi/owners-vision/owners-vision.zip?displayAssetName=false&label=ZIP%20downloads "GitHub release ZIP downloads across published versions")](https://github.com/ammarbalkhi/owners-vision/releases)
 
 [Give feedback or suggest an improvement](https://github.com/ammarbalkhi/owners-vision/issues/new/choose)
 
@@ -85,7 +85,9 @@ File installation for Claude Code, Gemini CLI, OpenCode, and the shared skill di
 | Agent with skill discovery | Copy the `owners-vision/` folder into the agent's skill directory, such as `.agents/skills/owners-vision/`, then select `owners-vision`. |
 | Agent that reads files | Ask: *Read owners-vision/SKILL.md and run the Hand of the Owner on my proposed next step before implementing it.* |
 | CLI that accepts instruction text | `python owner_vision.py instructions` prints the exact `SKILL.md` bytes. Pass them through the CLI's documented input option. |
-| No clone | Download the [self-contained skill ZIP](dist/owners-vision.zip) and extract `owners-vision/`. |
+| No clone | Download the [self-contained skill ZIP](https://github.com/ammarbalkhi/owners-vision/releases/latest/download/owners-vision.zip) and extract `owners-vision/`. |
+
+The badge counts downloads of the release ZIP across published versions. It includes repeat downloads and excludes clones, copied files, and GitHub's automatic source ZIPs. [Download details](dist/README.md).
 
 Every route needs file access to the project and Python 3 for the integrity check. Subagent support enables a fresh independent review; without that support, the same agent reviews in the current session. No additional session or CLI is required. [Agent and CLI usage](docs/agent-usage.md) covers each route, sandboxed agents, and the check's exit and reason codes.
 
@@ -168,7 +170,7 @@ python -B tests/test_cli.py
 ```text
 owners-vision/     The portable skill: SKILL.md, integrity script, vision template
 owner_vision.py    CLI wrapper with three commands: instructions, skill-path, check
-dist/              The skill as a self-contained ZIP
+dist/              Release ZIP download link and counter details
 docs/              Agent and CLI usage, plus a text version of the demo
 tests/             Integrity and CLI tests, synthetic fixtures, recorded results
 ```
