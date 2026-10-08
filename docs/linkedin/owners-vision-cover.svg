@@ -3,39 +3,38 @@
 <desc id="description">The Hand checks the saved vision and proposed work before implementation. PASS lets already-authorized work continue; PAUSE stops for an unresolved check or conflict. At the next major step, unrecorded verified progress can receive a reminder. Only explicit owner authorization permits concise accomplishment additions, preserving all earlier text.</desc>
 <metadata>Created by Ammar Al Balkhi. Owner's Vision.</metadata>
 <rect x="0" y="0" width="1080" height="1350" rx="0" fill="#F6F5EF"/>
-<g transform="translate(0 59) scale(1.08)">
+<g transform="translate(0 81) scale(1.08)">
 <path d="M52 64 L73 36 L83 44 Z" fill="#0E644E"/><path d="M52 64 L73 36 L65 57 Z" fill="#103A32"/>
 <text x="98" y="63" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#103A32" text-anchor="start">Owner's Vision</text>
 <text x="948" y="61" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#51675F" text-anchor="end">Ammar Al Balkhi</text>
-<text x="52" y="141" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700" fill="#103A32" text-anchor="start">Keep the work aligned.</text>
-<text x="52" y="190" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="400" fill="#51675F" text-anchor="start">Protect the progress you already made.</text>
-<rect x="40" y="224" width="920" height="356" rx="24" fill="#FFFFFF" stroke="#D7E1D9" stroke-width="2"/>
+<text x="52" y="141" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700" fill="#103A32" text-anchor="start">Keep AI work aligned.</text>
+<text x="52" y="190" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="400" fill="#51675F" text-anchor="start">Your requirements. Your completed work.</text>
+<rect x="40" y="224" width="920" height="378" rx="24" fill="#FFFFFF" stroke="#D7E1D9" stroke-width="2"/>
 <circle cx="82" cy="269" r="22" fill="#103A32"/>
 <text x="82" y="279" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
-<text x="120" y="282" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#103A32" text-anchor="start">The Hand checks the next step</text>
-<text x="68" y="334" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="400" fill="#51675F" text-anchor="start">Vision intact? Proposed work aligned?</text>
-<rect x="68" y="365" width="412" height="178" rx="16" fill="#E9F3EC"/>
-<path d="M92 406 l9 9 l18 -23" fill="none" stroke="#0E644E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="137" y="423" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="#0E644E" text-anchor="start">PASS</text>
-<text x="92" y="475" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="400" fill="#103A32" text-anchor="start">Authorized work</text>
-<text x="92" y="518" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="400" fill="#103A32" text-anchor="start">can continue.</text>
-<rect x="500" y="365" width="432" height="178" rx="16" fill="#FFF0DF"/>
-<path d="M526 394 v28 M542 394 v28" fill="none" stroke="#8A461B" stroke-width="6" stroke-linecap="round"/>
-<text x="571" y="423" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="#8A461B" text-anchor="start">PAUSE</text>
-<text x="526" y="475" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="400" fill="#103A32" text-anchor="start">Resolve the blocker</text>
-<text x="526" y="518" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="400" fill="#103A32" text-anchor="start">before proceeding.</text>
-<rect x="40" y="606" width="920" height="215" rx="24" fill="#FFFFFF" stroke="#D7E1D9" stroke-width="2"/>
-<circle cx="82" cy="651" r="22" fill="#103A32"/>
-<text x="82" y="661" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
-<text x="120" y="664" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#103A32" text-anchor="start">At the next major step</text>
-<text x="68" y="719" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="400" fill="#51675F" text-anchor="start">Verified progress not recorded yet?</text>
-<text x="68" y="770" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="400" fill="#103A32" text-anchor="start">One short reminder to add it.</text>
-<rect x="40" y="847" width="920" height="215" rx="24" fill="#FFFFFF" stroke="#D7E1D9" stroke-width="2"/>
-<circle cx="82" cy="892" r="22" fill="#103A32"/>
-<text x="82" y="902" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
-<text x="120" y="905" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#103A32" text-anchor="start">Only after you authorize</text>
-<text x="68" y="960" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="400" fill="#103A32" text-anchor="start">Concise lines are added to your vision.</text>
-<text x="68" y="1011" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#0E644E" text-anchor="start">Every earlier line stays intact.</text>
-<text x="52" y="1112" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#103A32" text-anchor="start">Your direction. Your progress. Your permission.</text>
+<text x="120" y="282" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#103A32" text-anchor="start">Check</text>
+<text x="68" y="330" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="400" fill="#51675F" text-anchor="start">The Hand reviews your next step against</text>
+<text x="68" y="373" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="400" fill="#51675F" text-anchor="start">your requirements and recorded progress.</text>
+<rect x="68" y="403" width="412" height="169" rx="16" fill="#E9F3EC"/>
+<text x="92" y="458" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="#0E644E" text-anchor="start">PASS</text>
+<text x="92" y="508" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="400" fill="#103A32" text-anchor="start">Authorized work</text>
+<text x="92" y="548" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="400" fill="#103A32" text-anchor="start">can continue.</text>
+<rect x="500" y="403" width="432" height="169" rx="16" fill="#FFF0DF"/>
+<text x="526" y="458" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="#8A461B" text-anchor="start">PAUSE</text>
+<text x="526" y="508" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="400" fill="#103A32" text-anchor="start">Work stops. The Hand</text>
+<text x="526" y="548" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="400" fill="#103A32" text-anchor="start">explains the blocker.</text>
+<rect x="40" y="626" width="920" height="182" rx="24" fill="#FFFFFF" stroke="#D7E1D9" stroke-width="2"/>
+<circle cx="82" cy="671" r="22" fill="#103A32"/>
+<text x="82" y="681" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="120" y="684" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#103A32" text-anchor="start">Remind</text>
+<text x="68" y="732" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="400" fill="#51675F" text-anchor="start">At the next major step, get a reminder</text>
+<text x="68" y="775" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="400" fill="#103A32" text-anchor="start">if verified progress is not yet recorded.</text>
+<rect x="40" y="832" width="920" height="182" rx="24" fill="#FFFFFF" stroke="#D7E1D9" stroke-width="2"/>
+<circle cx="82" cy="877" r="22" fill="#103A32"/>
+<text x="82" y="887" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="120" y="890" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#103A32" text-anchor="start">Add lines</text>
+<text x="68" y="938" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="400" fill="#103A32" text-anchor="start">Concise facts added only after you authorize.</text>
+<text x="68" y="981" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#0E644E" text-anchor="start">Every earlier line stays intact.</text>
+<text x="52" y="1067" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#103A32" text-anchor="start">Your direction. Your progress. Your permission.</text>
 </g>
 </svg>

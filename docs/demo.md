@@ -1,6 +1,10 @@
 # Owner's Vision in action
 
-The [workflow picture](demo.png) explains what the skill asks an agent to do as a project grows. It is a diagram, not a transcript or a screenshot. [Editable SVG](demo.svg).
+**Keep AI work aligned.**
+
+The README uses a [wide overview](social-preview.png). The workflow below shows the three actions: **Check → Remind → Add lines**. [Editable workflow SVG](demo.svg).
+
+![The Hand checks proposed work against requirements and recorded progress, reminds about verified accomplishments not yet recorded, and adds concise lines only after owner authorization. Earlier text stays intact.](demo.png)
 
 **Owner's Vision** is the saved destination and recorded accomplishments. **The Hand of the Owner** is the role that checks proposed work against them.
 

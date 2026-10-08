@@ -10,11 +10,9 @@
 <rect x="870" y="144" width="346" height="268" rx="24" fill="#F6F5EF"/>
 <text x="1043" y="198" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#103A32" text-anchor="middle">Before new work</text>
 <rect x="894" y="221" width="298" height="70" rx="12" fill="#E9F3EC"/>
-<path d="M922 256 l9 9 l18 -23" fill="none" stroke="#0E644E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="969" y="269" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#0E644E" text-anchor="start">PASS</text>
+<text x="1043" y="269" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#0E644E" text-anchor="middle">PASS</text>
 <rect x="894" y="311" width="298" height="70" rx="12" fill="#FFF0DF"/>
-<path d="M926 333 v28 M942 333 v28" fill="none" stroke="#8A461B" stroke-width="6" stroke-linecap="round"/>
-<text x="969" y="359" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#8A461B" text-anchor="start">PAUSE</text>
+<text x="1043" y="359" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#8A461B" text-anchor="middle">PAUSE</text>
 <path d="M64 464 H1216" stroke="#5D8074" stroke-width="2"/>
 <text x="64" y="518" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" fill="#F6F5EF" text-anchor="start">Check → Remind → Add lines with your permission</text>
 <text x="64" y="594" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="400" fill="#F6F5EF" text-anchor="start">Ammar Al Balkhi · MIT</text>

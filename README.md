@@ -1,14 +1,14 @@
 # Owner's Vision
 
-**Keep AI work tied to what you asked for and what already works.**
+**Keep AI work aligned.**
 
 Owner's Vision helps AI coding agents keep long projects aligned with your requirements and completed work. **The Hand of the Owner** checks each proposed step against that saved record and pauses implementation when something conflicts or cannot be verified.
 
 Created by [Ammar Al Balkhi](https://github.com/ammarbalkhi) · [MIT](LICENSE) · [v0.1.0](https://github.com/ammarbalkhi/owners-vision/releases/tag/v0.1.0) · Early release
 
-![Owner's Vision workflow: before implementation, the Hand returns PASS or PAUSE. At the next major step, unrecorded verified progress gets a reminder. Only after explicit owner authorization are concise accomplishment lines appended, preserving all earlier text.](docs/demo.png)
+![Keep AI work aligned with your vision and what already works. The Hand returns PASS or PAUSE before new work. Check, remind, and add accomplishment lines only with your permission.](docs/social-preview.png)
 
-[Read the diagram as text](docs/demo.md).
+[See the workflow and text explanation](docs/demo.md).
 
 ## Install
 
