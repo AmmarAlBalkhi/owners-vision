@@ -4,7 +4,7 @@ The [demo image](demo.png) shows what you get while working with Owner's Vision:
 
 ## Clear direction
 
-New implementation is checked against the owner's locked vision. A fresh independent reviewer checks alignment, and an unresolved conflict pauses the work.
+New implementation is checked against the owner's locked vision. A fresh subagent reviews alignment when supported; otherwise the same agent reviews in the current session. The verdict identifies the method, and an unresolved conflict pauses the work.
 
 ## Protected progress
 

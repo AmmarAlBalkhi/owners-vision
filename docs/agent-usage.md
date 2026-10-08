@@ -2,7 +2,7 @@
 
 The skill follows the [Agent Skills directory format](https://agentskills.io/specification). Its instructions are plain Markdown, and its integrity helper needs only Python 3's standard library.
 
-**Every route needs** file access to the project, Python 3 for the integrity check, and a way to launch a fresh independent read-only reviewer. If no reviewer is available, the gate returns PAUSE. No loading route relaxes the authorization rules.
+**Every route needs** file access to the project and Python 3 for the integrity check. Use a fresh independent read-only reviewer subagent when supported. If subagents are unsupported, the same agent performs a dedicated review in the current session and identifies that method in its verdict. No additional session, CLI, or owner approval is needed for this fallback. The integrity, alignment, and authorization requirements still apply.
 
 ## One-command installation
 
@@ -14,7 +14,7 @@ npx skills add AmmarAlBalkhi/owners-vision --skill owners-vision --copy
 
 The installer currently requires Node.js 22.20 or newer. Select your agent if prompted. `--copy` installs the complete skill without requiring symlinks. To choose an agent directly, add its `--agent` value from the table below. Keep the project scope; omit `--global` unless you want an installation shared across projects.
 
-Then ask your agent to use `owners-vision` in this project. It follows [first-use setup](../owners-vision/references/setup.md), obtains any missing destination/setup approval, creates the approved binding, and registers the mandatory Hand rule. You need not calculate hashes or write project instructions. Installation alone does not establish authority or supply an independent reviewer. [Manual binding instructions](../README.md#bind-your-project) are also available.
+Then ask your agent to use `owners-vision` in this project. It follows [first-use setup](../owners-vision/references/setup.md), obtains any missing destination/setup approval, creates the approved binding, and registers the mandatory Hand rule. You need not calculate hashes or write project instructions. Installation alone does not establish authority; the review method follows the host's available capabilities. [Manual binding instructions](../README.md#bind-your-project) are also available.
 
 The standalone skill and integrity helper need Python, not Node.js. Use the manual copy or ZIP route if you do not want the Node-based installer.
 
@@ -107,4 +107,4 @@ If only the skill folder is installed, `python owners-vision/scripts/check_visio
 
 Most failures also include the vision's actual `vision_sha256`.
 
-Successful behavior on every agent and operating system has not been established. Each host must still provide the required file access and an independent reviewer.
+Successful behavior on every agent and operating system has not been established. Each host must provide the required file access and perform the applicable review. Same-session review does not provide independent judgment. Failure of a supported subagent review is a reason to pause, not to silently switch methods.

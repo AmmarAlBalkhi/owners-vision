@@ -15,7 +15,7 @@ The six CLI checks cover exact instruction export, a resolvable entry-point path
 
 ## Behavioral cases
 
-The latest [first-use and reviewer workflow trials](workflow-trials.md) cover nine additional cases against the revised setup instructions, including actual nested reviewer calls and the next gate after an authorized addition. Their [receipt](results/setup-workflow.json) records the tested instruction hashes and the limits of the evaluation.
+The [review-method trials](fallback-trials.md) cover the current subagent and same-session routes. Earlier [first-use and reviewer workflow trials](workflow-trials.md) cover nine cases from before the fallback was introduced, including actual nested reviewer calls and the next gate after an authorized addition. Their [receipt](results/setup-workflow.json) records the tested instruction hashes and the limits of the evaluation.
 
 The six supplied fixtures cover:
 
@@ -26,7 +26,7 @@ The six supplied fixtures cover:
 5. Explicit authorization for a concise accomplishment addition.
 6. Casual agreement that supplies no append authorization.
 
-Use a fresh agent for each trial. Give it the skill, that case's `REQUEST.md`, and the case's own files. Keep expected outcomes and prior conclusions out of its task. Launch a fresh read-only reviewer when the skill requires alignment review. Only case 5 permits changes to its three declared files; copy the fixtures before testing it.
+Use a fresh agent for each trial. Give it the skill, that case's `REQUEST.md`, and the case's own files. Keep expected outcomes and prior conclusions out of its task. Use the review method required by the skill and the trial's stated host capabilities. Only case 5 permits changes to its three declared files; copy the fixtures before testing it.
 
 The included fixtures are fresh starting inputs. Recorded outputs in [results/observed-trials.json](results/observed-trials.json) come from the earlier six-case evaluation, with the failed-lock correction independently rechecked. Local paths and reviewer identifiers have been omitted; response text is preserved. The final wording clarifies reminder timing and was validated afterward, without rerunning every earlier behavioral case.
 

@@ -2,6 +2,8 @@
 
 Nine fresh working agents exercised the revised instructions on 2026-10-08. All nine reached the intended bounded outcome. The alignment cases actually launched separate read-only reviewer agents and waited for their results. The coordinator checked file hashes before and after each trial.
 
+These are historical observations from the revision before same-session review was supported. In particular, case 07's PAUSE is the old behavior. The current fallback is covered by the [review-method trials](fallback-trials.md).
+
 [Recorded requests, observations, and instruction hashes](results/setup-workflow.json)
 
 The same receipt records a separate local Skills CLI 1.7.1 installation check: all seven packaged files were preserved, and the installed helper accepted intact input and rejected tampered input without modifying the fixtures.

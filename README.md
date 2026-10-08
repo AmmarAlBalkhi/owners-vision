@@ -23,7 +23,7 @@ Owner's Vision gives the agent one fixed reference: the owner's vision file, loc
 ## How it works
 
 1. **Verify.** The vision's exact bytes must match its companion lock and the accepted digest in the project's rules. A mismatch, missing file, or ambiguous lock returns PAUSE. A small script does this check deterministically.
-2. **Review.** A fresh read-only reviewer asks whether every part of the proposed work fits the vision and preserves its achieved checkpoints. An unresolved conflict, or no available reviewer, returns PAUSE.
+2. **Review.** A fresh read-only subagent checks whether the proposed work fits the vision and preserves its checkpoints. If the environment does not support subagents, the same agent performs that review in the current session. The verdict identifies the method. Conflicts and inconclusive reviews return PAUSE.
 3. **Verdict.** The agent returns a one-line banner (`THE HAND OF THE OWNER — PASS` or `— PAUSE`) and one to three reasons. PASS only lets work that is already authorized continue.
 4. **Remind.** When a new major step begins and the previous step has verified results that aren't recorded yet, the agent adds one line: *Consider adding the previous step's verified accomplishments to Owner's Vision.*
 5. **Record.** Only after the owner explicitly authorizes it, the agent appends concise checkpoint lines. Every earlier byte stays unchanged, and only the declared digests are updated to match.
@@ -83,13 +83,13 @@ File installation for Claude Code, Gemini CLI, OpenCode, and the shared skill di
 | CLI that accepts instruction text | `python owner_vision.py instructions` prints the exact `SKILL.md` bytes. Pass them through the CLI's documented input option. |
 | No clone | Download the [self-contained skill ZIP](dist/owners-vision.zip) and extract `owners-vision/`. |
 
-Every route needs file access to the project, Python 3 for the integrity check, and a way to launch a fresh read-only reviewer. If no reviewer is available, the gate returns PAUSE. [Agent and CLI usage](docs/agent-usage.md) covers each route, sandboxed agents, and the check's exit and reason codes.
+Every route needs file access to the project and Python 3 for the integrity check. Subagent support enables a fresh independent review; without that support, the same agent reviews in the current session. No additional session or CLI is required. [Agent and CLI usage](docs/agent-usage.md) covers each route, sandboxed agents, and the check's exit and reason codes.
 
 ## Bind your project
 
 On first use, ask your agent to use the skill in your project. It follows the [setup procedure](owners-vision/references/setup.md), confirms your destination and setup permission, then handles the vision file, hashes, and project instructions. You do not need to calculate a hash or write these files yourself. Installing the skill alone does not complete setup.
 
-The project rules make the Hand mandatory before implementation. The Hand verifies the locked vision, launches a fresh read-only reviewer subagent, and waits for its result. A missing lock or unavailable review produces PAUSE. An incomplete lock does not reopen an approved destination for replacement.
+The project rules make the Hand mandatory before implementation. The Hand verifies the locked vision and uses a fresh read-only subagent when supported, or the same agent in the same session otherwise. A missing lock, unresolved conflict, or failed or inconclusive review produces PAUSE. An incomplete lock does not reopen an approved destination for replacement.
 
 For manual setup, use your agent's existing governing instruction file:
 
@@ -106,7 +106,9 @@ For manual setup, use your agent's existing governing instruction file:
    ## Owner's Vision
    Before any new implementation, read <installed owners-vision/SKILL.md path>
    and run the Hand of the Owner. Wait for PASS after integrity verification
-   and a fresh read-only subagent review. Otherwise PAUSE.
+   and alignment review: a fresh read-only subagent when supported,
+   or the same agent in the same session otherwise. Identify the method.
+   A failed or inconclusive review or unresolved conflict requires PAUSE.
    PASS permits only implementation already authorized by the owner.
    Owner: <name>
    Canonical vision: OWNER_VISION.md
@@ -123,7 +125,8 @@ Filenames are examples; use your own. Never regenerate the lock to make a failed
 | --- | --- | --- |
 | [Integrity checks](tests/run_tests.py) | 12/12 pass | Valid bindings, altered vision or lock bytes, missing files, ambiguous or misnamed locks, invalid digests, CRLF bytes, and an append with re-synced digests |
 | [CLI checks](tests/test_cli.py) | 6/6 pass | Exact instruction export, entry-point path, JSON results, exit codes, non-ASCII paths, and runs from other working directories |
-| [First-use and reviewer trials](tests/workflow-trials.md) | 9/9 intended outcomes observed | Guided setup, real reviewer launches, conflicts, authorized append, the following gate, and missing prerequisites; one fresh agent per synthetic case |
+| [Review-method trials](tests/fallback-trials.md) | 5/5 intended outcomes observed | Actual fresh subagent review, same-session review, conflict, failed integrity, and first-use setup; unsupported capability simulated |
+| [Earlier first-use and reviewer trials](tests/workflow-trials.md) | 9/9 intended outcomes observed | Historical setup and review trials before the same-session fallback; the old unavailable-reviewer outcome is identified in the record |
 | [Earlier behavioral cases](tests/results/observed-trials.json) | 6/6 reached the intended outcome | Historical recorded responses to synthetic fixtures; see the limits below. |
 
 | Earlier synthetic case | Situation | Recorded outcome |
@@ -145,15 +148,15 @@ python -B tests/run_tests.py
 python -B tests/test_cli.py
 ```
 
-**Limits.** The earlier case-04 trial wrongly offered a reminder when the lock had failed. The rule was narrowed so that any reminder requires a verified lock, and a fresh independent recheck passed. The older six cases were not all rerun against subsequent wording changes. The newer nine trials used a local candidate copy; reviewer unavailability was simulated. The hash check is deterministic. Alignment and authorization depend on the agent following the skill. These are bounded observations, and other agent environments remain untested. [tests/README.md](tests/README.md) explains how to reproduce a trial.
+**Limits.** The earlier case-04 trial wrongly offered a reminder when the lock had failed. The rule was narrowed so that any reminder requires a verified lock, and a fresh independent recheck passed. Earlier case sets were not all rerun against each later revision; their receipts identify the tested instructions. Host capability restrictions in the review-method trials were simulated. The hash check is deterministic. Alignment and authorization depend on the agent following the skill, and same-session review does not provide independent judgment. These are bounded observations, and other agent environments remain untested. [tests/README.md](tests/README.md) explains how to reproduce a trial.
 
 ## Design choices
 
-- **Deterministic where possible.** Hashing is a script. Judgment is the agent's, checked by an independent read-only reviewer.
+- **Deterministic where possible.** Hashing is a script. Alignment uses a fresh subagent when supported, with an explicitly identified same-session review otherwise.
 - **Two digests, not one.** The lock file and the digest in the governing rules must agree, so editing one file cannot quietly approve a change.
 - **Append-only checkpoints.** Recorded accomplishments become requirements that future work must preserve. Earlier text is never rewritten.
 - **Explicit, scoped permission.** Only the owner can authorize an addition, and authorizing an addition approves nothing else.
-- **Fails closed.** A bad lock, a vague proposal, or a missing reviewer returns PAUSE.
+- **Fails closed on unresolved checks.** A bad lock, a vague proposal, an unresolved conflict, or a failed or inconclusive review returns PAUSE.
 
 ## Repository layout
 

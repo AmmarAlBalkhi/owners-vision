@@ -18,7 +18,7 @@ The project's governing rules must identify the owner, canonical vision file, co
 
 On first use, the agent follows [setup](references/setup.md): confirm the owner's destination and setup permission, create the approved lock and project binding, and register the mandatory Hand rule. Existing explicit approvals are reused. The owner need not calculate hashes or edit instruction files. An incomplete lock never authorizes replacing an approved destination.
 
-Before implementation, the Hand verifies the binding and actually launches a fresh read-only reviewer subagent, waits for its review, then returns PASS or PAUSE. Missing integrity or independent review means PAUSE. Setup and PASS grant no new implementation authority.
+Before implementation, the Hand verifies the binding and reviews alignment. It launches and waits for a fresh read-only reviewer subagent when supported. Otherwise the same agent performs the review in the current session, without additional setup or approval. The verdict identifies the method. A failed integrity check, inconclusive review, or conflict means PAUSE. Setup and PASS grant no new implementation authority.
 
 The digest helper reports integrity, not semantic alignment, owner approval, or implementation permission. A companion lock can contain one digest alone or one standard `digest  filename` record.
 

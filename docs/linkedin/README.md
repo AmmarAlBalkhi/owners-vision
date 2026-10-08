@@ -6,8 +6,8 @@ Created by AmmarAlBalkhi.
 
 The animation explains the decision before new implementation:
 
-- **PASS:** the proposed work fits the owner's vision and preserves verified accomplishments. Vision integrity and a fresh independent alignment review must both pass. Work that the owner has already authorized may continue.
-- **FAIL → PAUSE:** a conflict, missing integrity evidence, an ambiguous proposal, or unavailable or inconclusive independent review stops implementation. The agent reports the blocker to the owner. The issue must be resolved and the check repeated before work can proceed.
+- **PASS:** the proposed work fits the owner's vision and preserves verified accomplishments. Vision integrity and alignment review must both pass. The review uses a fresh subagent when supported, or the same agent in the current session otherwise. Work that the owner has already authorized may continue.
+- **FAIL → PAUSE:** a conflict, missing integrity evidence, an ambiguous proposal, or a failed or inconclusive review stops implementation. The agent reports the blocker to the owner. The issue must be resolved and the check repeated before work can proceed.
 
 The skill's literal verdicts are `THE HAND OF THE OWNER — PASS` and `THE HAND OF THE OWNER — PAUSE`. The video's **FAIL** describes a failed or incomplete check; **PAUSE** is the resulting action. PASS does not grant owner authorization.
 

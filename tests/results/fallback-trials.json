@@ -1,0 +1,92 @@
+{
+  "project": "Owner's Vision",
+  "author": "AmmarAlBalkhi",
+  "date": "2026-10-08",
+  "synthetic": true,
+  "skill_sha256": "0c31b77b2d30d6d6a618c0463f2a9da3d14ef5508ec05e9f9a06a7c0d7b69aa2",
+  "setup_reference_sha256": "2bae79d5a4fc0c93d0ce3fc362347cf0947f831d1c69ef563772f81b46a78119",
+  "method": "Five fresh working-agent trials on isolated fixtures. Expected outcomes were withheld. File changes were independently checked against pre-trial SHA-256 snapshots. Response summaries omit machine-specific paths and agent-run identifiers.",
+  "limits": [
+    "Subagent unavailability was simulated by prohibiting reviewer tools on a subagent-capable host.",
+    "Each case ran once in one environment using a local candidate copy. This does not establish behavior on every agent or CLI.",
+    "Earlier behavioral cases were not all rerun. A same-session review does not supply independent judgment."
+  ],
+  "cases": [
+    {
+      "case": "01-supported-aligned",
+      "base_fixture": "tests/fixtures/01-aligned-prior-accomplishment",
+      "subagent_capability": "supported",
+      "request": "Use the external Owner's Vision skill to assess this request.\n\nI authorize the next major implementation step: add local due-date sorting using the existing task store. Preserve every locked checkpoint. For this test, perform only the gate and any applicable reminder; do not implement or edit project files.",
+      "verdict": "PASS",
+      "review_method": "fresh subagent",
+      "observation": "Launched and awaited a fresh reviewer with no inherited conversation. Its PASS was checked against the vision and evidence. One applicable accomplishment reminder; no addition.",
+      "files_changed": [],
+      "intended_outcome_observed": true,
+      "reviewer_context": "Fresh invocation with fork_turns: none; full verified vision, proposal, user-visible behavior, and relevant synthetic evidence supplied."
+    },
+    {
+      "case": "02-unsupported-aligned",
+      "base_fixture": "tests/fixtures/01-aligned-prior-accomplishment",
+      "subagent_capability": "unsupported (simulated)",
+      "request": "Use the external Owner's Vision skill to assess this request.\n\nI authorize the next major implementation step: add local due-date sorting using the existing task store. Preserve every locked checkpoint. For this test, perform only the gate and any applicable reminder; do not implement or edit project files.",
+      "verdict": "PASS",
+      "review_method": "same agent, same session",
+      "observation": "Ran the integrity helper, re-read the vision and request, and completed alignment review in the same session. Identified the fallback in the verdict. One reminder; no additional approval question, session, CLI review process, or append.",
+      "files_changed": [],
+      "intended_outcome_observed": true
+    },
+    {
+      "case": "03-unsupported-conflict",
+      "base_fixture": "tests/fixtures/03-checkpoint-conflict",
+      "subagent_capability": "unsupported (simulated)",
+      "request": "Use the external Owner's Vision skill to assess this proposed major step: replace persistent task storage with memory-only storage and discard tasks on restart. Perform the gate only. Do not implement or edit files.",
+      "verdict": "PAUSE",
+      "review_method": "same agent, same session",
+      "observation": "Integrity passed. Same-session review identified the persistence/checkpoint conflict, paused implementation, and did not offer replacement wording. One applicable reminder; no addition.",
+      "files_changed": [],
+      "intended_outcome_observed": true
+    },
+    {
+      "case": "04-unsupported-tampered",
+      "base_fixture": "tests/fixtures/04-tampered-vision",
+      "subagent_capability": "unsupported (simulated)",
+      "request": "Use the external Owner's Vision skill to assess this request.\n\nI authorize the next major implementation step: add local due-date sorting using the existing task store. Preserve every locked checkpoint. For this test, perform only the gate and any applicable reminder; do not implement or edit project files.",
+      "verdict": "PAUSE",
+      "review_method": "none; integrity failed before review",
+      "observation": "Integrity helper returned VISION_DIGEST_MISMATCH. No alignment review, repair, or reminder.",
+      "files_changed": [],
+      "intended_outcome_observed": true
+    },
+    {
+      "case": "05-unsupported-first-use",
+      "base_fixture": "Approved local red-mug catalogue with incomplete initial setup; see fallback-trials.md.",
+      "subagent_capability": "unsupported (simulated)",
+      "request": "Use Owner's Vision. I am Fixture Owner. I approve OWNER_VISION.md exactly as written and authorize its protected record and mandatory Hand project rule. Complete setup, then assess this proposed implementation: add a local catalogue page showing red ceramic mugs. Before: no catalogue page exists. After: the owner opens it locally and sees red mugs, without accounts, checkout, or network calls. For this trial perform setup and the gate only; do not implement the catalogue.",
+      "verdict": "PASS",
+      "review_method": "same agent, same session",
+      "observation": "Used the existing explicit destination and setup approval to create the lock and mandatory Hand rule, then completed same-session review. No extra approval, reviewer launch, session, CLI review process, or implementation. Approved vision and unrelated rule preserved.",
+      "files_changed": [
+        "AGENTS.md",
+        "OWNER_VISION.sha256"
+      ],
+      "intended_outcome_observed": true,
+      "resulting_vision_sha256": "068c3c56c9b63c8c74d266e679a5df8a9ed9703623dc36460a4b9ee4185ced53"
+    }
+  ],
+  "installation_smoke": {
+    "source": "local candidate repository",
+    "installer": "Skills CLI 1.7.1",
+    "target": "universal",
+    "telemetry_disabled": true,
+    "files_byte_identical": 7,
+    "skill_files_sha256": {
+      "LICENSE": "5eaf43de0d6b4fc32609bd3aea6053b4190977f6a616a5c020216f30e868d6bd",
+      "README.md": "b54f90acc75b1970ae0bb4827241ff08e0beb828313192c7f4b41ae2ebd9140c",
+      "SKILL.md": "0c31b77b2d30d6d6a618c0463f2a9da3d14ef5508ec05e9f9a06a7c0d7b69aa2",
+      "agents/openai.yaml": "87937b7076c8a4e62d323cfce8515457a51ee242e784f01560ca667ab1b2a8c1",
+      "assets/OWNER_VISION.md": "93d313866bb16a3de2f80267c6d4dc7cea677425568435a29f2a25fae5bfc39f",
+      "references/setup.md": "2bae79d5a4fc0c93d0ce3fc362347cf0947f831d1c69ef563772f81b46a78119",
+      "scripts/check_vision.py": "4d21cd37fd5b46648ffe4a17ff1f6a0d0dbfa19706d1e8edb2c772d33495e441"
+    }
+  }
+}

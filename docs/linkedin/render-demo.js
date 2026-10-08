@@ -103,7 +103,7 @@ function drawScene(n, t) {
     });
     reveal(t, .85, () => {
       icon(118, 838, true, C.green, .63);
-      txt(160, 850, 'Independent review passed', 38, 400, C.ink);
+      txt(160, 850, 'Alignment review passed', 38, 400, C.ink);
     });
     reveal(t, 1.3, () => {
       rect(96, 943, 888, 225, C.green, 24);
@@ -145,7 +145,7 @@ function drawScene(n, t) {
 function svgFrame(n, t) {
   p = [`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="title desc">`,
     `<title id="title">Owner's Vision — ${esc(scenes[n].name.slice(3))}</title>`,
-    '<desc id="desc">Decision workflow for AI coding agents. PASS allows already-authorized work to continue after integrity and independent alignment checks. A failed or incomplete check requires PAUSE: stop implementation and report the blocker.</desc>',
+    '<desc id="desc">Decision workflow for AI coding agents. PASS allows already-authorized work to continue after integrity and alignment checks. Review uses a fresh subagent when supported, or the same agent in the same session otherwise. A failed or incomplete check requires PAUSE: stop implementation and report the blocker.</desc>',
     "<metadata>Owner's Vision. Created by AmmarAlBalkhi.</metadata>"];
   drawScene(n, t); p.push('</svg>'); return p.join('\n');
 }

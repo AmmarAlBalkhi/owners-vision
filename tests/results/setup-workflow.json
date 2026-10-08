@@ -2,6 +2,7 @@
   "project": "Owner's Vision",
   "author": "AmmarAlBalkhi",
   "date": "2026-10-08",
+  "version_note": "Historical trials before same-session review was introduced. Case 07 records the earlier PAUSE behavior; current review methods are tested separately in fallback-trials.json.",
   "synthetic": true,
   "skill_sha256": "a54d72971046ca669f409c68bd0d2d48d32794f71311f59dd85d2cba54fd428b",
   "setup_reference_sha256": "f1ef6502678ad1c1c9e57329ad8f0dc64dab641de46f730988a24df92172fdea",

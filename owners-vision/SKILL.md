@@ -1,6 +1,6 @@
 ---
 name: owners-vision
-description: Set up an owner-approved project vision, then run the Hand of the Owner with a fresh independent reviewer before implementation; remind about verified accomplishments and append them only with explicit authorization.
+description: Set up an owner-approved project vision and review implementation against it, using a fresh subagent when supported or the same agent in the current session otherwise; append verified accomplishments only with explicit authorization.
 ---
 
 # The Hand of the Owner
@@ -34,13 +34,13 @@ The helper verifies integrity only. It cannot grant a Hand PASS or owner authori
 Before implementation:
 
 1. Verify the current vision and lock. Read the exact proposed work, what the user will do before and after it, and what the user will see when it finishes. A proposal too vague to compare requires PAUSE.
-2. Launch one fresh read-only reviewer or oracle subagent and wait for its returned review. Give it the exact locked vision, digest, proposal, and user-visible result. It must not edit, implement, invent an exception, or act as owner authority. Discovering a reviewer tool, reviewing your own work, or reusing an earlier review does not complete this step. If a separate reviewer cannot actually be launched or its review is unavailable or inconclusive, return PAUSE. A failed integrity check stops the gate before this stage.
-3. Ask it: **Does every part of the proposed work fit the locked Owner's Vision and preserve its achieved checkpoints without changing or straying from them?**
-4. Independently compare the proposal with the vision and the review. Preserve every checkpoint's verified behavior and acceptance limits. An unresolved conflict requires PAUSE.
+2. Check whether the current environment supports subagents. When supported, launch one fresh read-only reviewer or oracle subagent and wait for its returned review. Give it a fresh context containing the exact locked vision, digest, proposal, user-visible result, and relevant evidence. It must not edit, implement, invent an exception, or act as owner authority. Discovering a reviewer tool or reusing an earlier review does not complete this step.
+3. If subagents are unsupported, perform a dedicated read-only review yourself in this same session. Re-read the verified vision and compare every part of the proposal with its destination, checkpoints, and acceptance limits. This fallback needs no extra owner approval, new session, or separate CLI call. It is a same-agent review, not an independent review.
+4. In either mode, answer: **Does every part of the proposed work fit the locked Owner's Vision and preserve its achieved checkpoints without changing or straying from them?** Check the conclusion against the actual proposal and evidence. An unresolved conflict or inconclusive review requires PAUSE. A failed integrity check stops the gate before review. If a supported subagent was launched but its review failed or did not return, PAUSE; do not use the fallback to bypass that failure or an adverse review.
 
 An implementation's success does not justify rewriting the owner's destination or lowering an achieved checkpoint.
 
-On a conflict, report it and stop implementation. Do not offer to replace, weaken, or renegotiate the vision to make the proposed work fit. Preserve the actual reviewer invocation and result in the session's normal record; do not claim an independent review without them.
+On a conflict, report it and stop implementation. Do not offer to replace, weaken, or renegotiate the vision to make the proposed work fit. Record the method and assessment in the session's normal record. For subagent review, also preserve the actual invocation and returned result; never label a same-agent review independent.
 
 ## Accomplishment reminder
 
@@ -77,12 +77,12 @@ Return exactly one banner, followed by one to three short reasons:
 THE HAND OF THE OWNER — PASS
 ```
 
-Use PASS only when integrity verification and independent alignment review pass. PASS means only that already-authorized work may continue; it is not owner approval or proof of completion.
+Use PASS only when integrity verification and the applicable alignment review pass. Within the short reasons, identify a completed review as `Review: fresh subagent` or `Review: same agent, same session (subagents unsupported)`. PASS means only that already-authorized work may continue; it is not owner approval or proof of completion.
 
 ```text
 THE HAND OF THE OWNER — PAUSE
 ```
 
-Use PAUSE for a missing or failed lock, ambiguous proposal, unavailable independent review, or unresolved vision/checkpoint conflict. Implementation must not begin or continue on PAUSE; report the conflict to the owner.
+Use PAUSE for a missing or failed lock, ambiguous proposal, failed or inconclusive review, or unresolved vision/checkpoint conflict. Lack of subagent support alone does not require PAUSE; use the same-session review above. Implementation must not begin or continue on PAUSE; report the conflict to the owner.
 
 One optional accomplishment reminder is the only extra recommendation allowed alongside the gate verdict. Do not add another verdict, implementation plan, or unrelated commentary. This verdict format applies to alignment reviews; an authorized append is reported as the bounded addition and its integrity check.
