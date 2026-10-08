@@ -4,9 +4,9 @@
 
 Owner's Vision is a set of instructions for AI coding tools. Before new work starts, it tells the agent to compare the plan with your saved requirements and completed work. Conflicts pause implementation. Only you can authorize adding accomplishments to the record.
 
-Created by [AmmarAlBalkhi](https://github.com/AmmarAlBalkhi) · MIT license · Python 3 standard library · [Agent Skills](https://agentskills.io/specification) format
+Created by [Ammar Al Balkhi](https://github.com/ammarbalkhi) · MIT license · Python 3 standard library · [Agent Skills](https://agentskills.io/specification) format
 
-[Give feedback or suggest an improvement](https://github.com/AmmarAlBalkhi/owners-vision/issues/new/choose)
+[Give feedback or suggest an improvement](https://github.com/ammarbalkhi/owners-vision/issues/new/choose)
 
 Watch the [24-second PASS / FAIL overview](docs/linkedin/README.md): what gets checked, when authorized work can continue, and when implementation must pause.
 
@@ -35,7 +35,7 @@ Starting the next step, a gate PASS, silence, and "looks good" are not authoriza
 You need Python 3 and nothing else. Use `python3` if that is how Python 3 is named on your system.
 
 ```bash
-git clone https://github.com/AmmarAlBalkhi/owners-vision.git
+git clone https://github.com/ammarbalkhi/owners-vision.git
 ```
 
 ```bash
@@ -69,7 +69,7 @@ The second command exits with code `1` and changes no files. At this point an ag
 From the project where you want to use the skill, install it with the [Skills CLI](https://github.com/vercel-labs/skills):
 
 ```bash
-npx skills add AmmarAlBalkhi/owners-vision --skill owners-vision --copy
+npx skills add ammarbalkhi/owners-vision --skill owners-vision --copy
 ```
 
 This route needs Node.js 22.20 or newer. Select your agent if prompted, then [bind your project](#bind-your-project). The installer copies the whole skill and its resources into the agent's project skill directory. The manual and ZIP routes below need no Node.js.
@@ -173,8 +173,8 @@ tests/             Integrity and CLI tests, synthetic fixtures, recorded results
 
 ## Feedback
 
-Try it on a disposable project, then [open an issue](https://github.com/AmmarAlBalkhi/owners-vision/issues) with the request you gave, the behavior you observed, and the environment you used.
+Try it on a disposable project, then [open an issue](https://github.com/ammarbalkhi/owners-vision/issues) with the request you gave, the behavior you observed, and the environment you used.
 
 ## License
 
-MIT © AmmarAlBalkhi. See [LICENSE](LICENSE).
+MIT © Ammar Al Balkhi. See [LICENSE](LICENSE).

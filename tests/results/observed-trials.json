@@ -1,6 +1,6 @@
 {
   "project": "Owner's Vision",
-  "author": "AmmarAlBalkhi",
+  "author": "Ammar Al Balkhi",
   "synthetic": true,
   "launch_skill_sha256": "44369a10bbb3d80bd1892bb3c9304385afbb6279f2390d8536c8ed501b90597f",
   "version_note": "Early cases preceded the verified-lock reminder correction. Case 4 was independently rechecked after that correction. The final timing clarification was validated afterward; all behavioral cases were not rerun against the final wording.",

@@ -1,4 +1,4 @@
-// Owner's Vision. Created by AmmarAlBalkhi.
+// Owner's Vision. Created by Ammar Al Balkhi.
 // Editable vector animation: the check, PASS, and failed checks that require PAUSE.
 const fs = require('node:fs');
 const path = require('node:path');
@@ -51,7 +51,7 @@ function brand(dark = false) {
   const color = dark ? C.lime : C.green;
   p.push(`<path d="M92 116 L117 78 L126 87 Z M92 116 L106 102 L117 78 L113 104 Z" fill="${color}"/>`);
   txt(147, 111, "Owner's Vision", 32, 700, dark ? C.white : C.ink);
-  txt(984, 108, 'AmmarAlBalkhi', 25, 400, dark ? C.dim : C.muted, 'text-anchor="end"');
+  txt(984, 108, 'Ammar Al Balkhi', 25, 400, dark ? C.dim : C.muted, 'text-anchor="end"');
 }
 function footer(n, t, dark = false) {
   const muted = dark ? C.dim : C.muted;
@@ -136,7 +136,7 @@ function drawScene(n, t) {
       txt(594, 695, 'Resolve the blocker first.', 27, 400, C.white);
     });
     label(96, 850, 'GET OWNER’S VISION', C.lime);
-    txt(96, 934, 'github.com/AmmarAlBalkhi', 45, 700, C.white);
+    txt(96, 934, 'github.com/ammarbalkhi', 45, 700, C.white);
     txt(96, 994, '/owners-vision', 45, 700, C.white);
     txt(96, 1110, 'Free to use · Open source · MIT', 33, 400, C.dim);
   }
@@ -146,7 +146,7 @@ function svgFrame(n, t) {
   p = [`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="title desc">`,
     `<title id="title">Owner's Vision — ${esc(scenes[n].name.slice(3))}</title>`,
     '<desc id="desc">Decision workflow for AI coding agents. PASS allows already-authorized work to continue after integrity and alignment checks. Review uses a fresh subagent when supported, or the same agent in the same session otherwise. A failed or incomplete check requires PAUSE: stop implementation and report the blocker.</desc>',
-    "<metadata>Owner's Vision. Created by AmmarAlBalkhi.</metadata>"];
+    "<metadata>Owner's Vision. Created by Ammar Al Balkhi.</metadata>"];
   drawScene(n, t); p.push('</svg>'); return p.join('\n');
 }
 function atTime(t) {
@@ -171,14 +171,14 @@ async function stills() {
     panels.push({ input: await sharp(path.join(dir, scenes[i].name + '.png')).resize(432, 540).toBuffer(), left: (i % 2) * 448 + 16, top: Math.floor(i / 2) * 556 + 16 });
   }
   await sharp({ create: { width: 912, height: 1128, channels: 3, background: '#D8DDD5' } }).composite(panels).png().toFile(path.join(OUT, 'storyboard.png'));
-  fs.writeFileSync(path.join(OUT, 'storyboard.json'), JSON.stringify({ title: "Owner's Vision — PASS / FAIL", creator: 'AmmarAlBalkhi', format: '1080x1350', fps: FPS, duration, type: 'workflow explanation', scenes }, null, 2) + '\n');
+  fs.writeFileSync(path.join(OUT, 'storyboard.json'), JSON.stringify({ title: "Owner's Vision — PASS / FAIL", creator: 'Ammar Al Balkhi', format: '1080x1350', fps: FPS, duration, type: 'workflow explanation', scenes }, null, 2) + '\n');
   process.stdout.write(`Rendered ${scenes.length} scenes and cover. ${duration} seconds at ${FPS} fps.\n`);
 }
 async function video() {
   const ffmpeg = process.env.VISION_FFMPEG;
   if (!ffmpeg || !fs.existsSync(ffmpeg)) throw Error('Set VISION_FFMPEG to the FFmpeg executable.');
   const target = path.join(OUT, 'owners-vision-linkedin.mp4');
-  const ff = spawn(ffmpeg, ['-hide_banner', '-loglevel', 'error', '-y', '-f', 'image2pipe', '-vcodec', 'png', '-framerate', String(FPS), '-i', 'pipe:0', '-an', '-c:v', 'libx264', '-preset', 'medium', '-b:v', '1500k', '-minrate', '1500k', '-maxrate', '1500k', '-bufsize', '3000k', '-x264-params', 'nal-hrd=cbr:filler=1', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', '-metadata', "title=Owner's Vision — PASS / FAIL", '-metadata', 'artist=AmmarAlBalkhi', '-metadata', 'comment=Decision workflow. Created by AmmarAlBalkhi.', '-r', String(FPS), target], { windowsHide: true, stdio: ['pipe', 'ignore', 'pipe'] });
+  const ff = spawn(ffmpeg, ['-hide_banner', '-loglevel', 'error', '-y', '-f', 'image2pipe', '-vcodec', 'png', '-framerate', String(FPS), '-i', 'pipe:0', '-an', '-c:v', 'libx264', '-preset', 'medium', '-b:v', '1500k', '-minrate', '1500k', '-maxrate', '1500k', '-bufsize', '3000k', '-x264-params', 'nal-hrd=cbr:filler=1', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', '-metadata', "title=Owner's Vision — PASS / FAIL", '-metadata', 'artist=Ammar Al Balkhi', '-metadata', 'comment=Decision workflow. Created by Ammar Al Balkhi.', '-r', String(FPS), target], { windowsHide: true, stdio: ['pipe', 'ignore', 'pipe'] });
   let stderr = ''; ff.stderr.on('data', b => stderr += b); ff.stdin.on('error', () => {});
   const done = once(ff, 'close');
   const total = Math.round(duration * FPS);

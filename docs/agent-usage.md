@@ -9,7 +9,7 @@ The skill follows the [Agent Skills directory format](https://agentskills.io/spe
 From your project directory, use the [Skills CLI](https://github.com/vercel-labs/skills):
 
 ```bash
-npx skills add AmmarAlBalkhi/owners-vision --skill owners-vision --copy
+npx skills add ammarbalkhi/owners-vision --skill owners-vision --copy
 ```
 
 The installer currently requires Node.js 22.20 or newer. Select your agent if prompted. `--copy` installs the complete skill without requiring symlinks. To choose an agent directly, add its `--agent` value from the table below. Keep the project scope; omit `--global` unless you want an installation shared across projects.

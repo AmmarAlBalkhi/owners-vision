@@ -33,3 +33,5 @@ The included fixtures are fresh starting inputs. Recorded outputs in [results/ob
 The twelve executable checks verify the helper. They do not automatically run agents or establish cross-environment behavioral reliability.
 
 To prepare another fresh fixture set, copy `run_tests.py` to a separate sibling `tests/` folder alongside a copy of `owners-vision/`, then run it with `--prepare`. Preparation refuses to overwrite existing fixtures.
+
+Historical receipts retain the repository URLs and commands used when each trial ran. The current repository is [ammarbalkhi/owners-vision](https://github.com/ammarbalkhi/owners-vision).

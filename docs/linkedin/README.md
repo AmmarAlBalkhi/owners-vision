@@ -1,6 +1,6 @@
 # Owner's Vision: PASS / FAIL in 24 seconds
 
-Created by AmmarAlBalkhi.
+Created by Ammar Al Balkhi.
 
 [Download the video](owners-vision-linkedin.mp4) · [Copy the LinkedIn post](linkedin-post.txt) · [Cover image](owners-vision-cover.png)
 

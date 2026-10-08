@@ -1,6 +1,6 @@
 {
   "title": "Owner's Vision — PASS / FAIL",
-  "creator": "AmmarAlBalkhi",
+  "creator": "Ammar Al Balkhi",
   "content_type": "Animated decision workflow",
   "duration_seconds": 24,
   "width": 1080,
@@ -10,8 +10,8 @@
   "codec": "H.264",
   "audio": "None; on-screen text",
   "average_file_bitrate_kbps": 1491,
-  "video_bytes": 4472055,
-  "sha256": "828433e394eaec7bab4b1fce021035bdb8b747c4d0e0259ab24737f079a8b53a",
+  "video_bytes": 4472060,
+  "sha256": "3f261e54b838f5b283fb5eeec036f579793583bb30dff45dc1f768a25cd154d4",
   "decode_exit_code": 0,
   "scene_text_bounds": "All four scenes within the content margin",
   "source": "render-demo.js",
