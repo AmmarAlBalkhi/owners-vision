@@ -6,6 +6,8 @@ Owner's Vision is a set of instructions for AI coding tools. Before new work sta
 
 Created by [AmmarAlBalkhi](https://github.com/AmmarAlBalkhi) · MIT license · Python 3 standard library · [Agent Skills](https://agentskills.io/specification) format
 
+[Give feedback or suggest an improvement](https://github.com/AmmarAlBalkhi/owners-vision/issues/new/choose)
+
 Watch the [24-second PASS / FAIL overview](docs/linkedin/README.md): what gets checked, when authorized work can continue, and when implementation must pause.
 
 ![Owner's Vision working flow: before implementation, the Hand returns PASS for aligned work or PAUSE for a checkpoint conflict. At the next major step it can remind the owner about verified accomplishments. After explicit authorization, the agent adds concise checkpoint lines and preserves all earlier text.](docs/demo.svg)

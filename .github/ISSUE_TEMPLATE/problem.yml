@@ -1,0 +1,20 @@
+name: Report a problem
+description: Tell us what went wrong while installing or using Owner's Vision.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Issues are public. Leave out private project files, personal information, and secrets.
+        If your agent drafts this report, review it and authorize submission before it posts.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe what you expected, what happened instead, and how to reproduce it if you can.
+    validations:
+      required: true
+  - type: input
+    id: setup
+    attributes:
+      label: Agent or CLI used (optional)
+      description: Include the version, operating system, or installation method if relevant.

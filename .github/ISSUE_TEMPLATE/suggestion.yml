@@ -1,0 +1,20 @@
+name: Suggest an improvement
+description: Share an idea or feedback about Owner's Vision.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Issues are public. Leave out private project files, personal information, and secrets.
+        If your agent drafts this report, review it and authorize submission before it posts.
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: What would you improve?
+      description: Share your suggestion or feedback and how it would help you.
+    validations:
+      required: true
+  - type: input
+    id: setup
+    attributes:
+      label: Agent or CLI used (optional)
+      description: Include this only if it helps explain your suggestion.
