@@ -1,6 +1,6 @@
 ---
 name: owners-vision
-description: Set up an owner-approved project vision and review implementation against it, using a fresh subagent when supported or the same agent in the current session otherwise; append verified accomplishments only with explicit authorization.
+description: Check project readiness immediately after installing or updating this skill, complete authorized setup, and review implementation against the owner's vision with a subagent whenever supported; append accomplishments only with explicit authorization.
 ---
 
 # The Hand of the Owner
@@ -9,9 +9,13 @@ Protect the owner's fixed product destination and every owner-locked accomplishm
 
 **Owner's Vision** is the owner's authoritative destination and recorded accomplishments. **The Hand of the Owner** is the checking role defined here; its reviewer and verdict cannot change that authority.
 
-## First use and incomplete setup
+## Installation, updates, and project readiness
 
-A request to use this skill starts by checking the project's setup. Installing the skill alone does not establish a vision or make its gate mandatory. If the initial binding is absent, follow [first-use setup](references/setup.md): obtain any missing owner approval, complete the authorized lock and project-rule setup, and verify it. Handle these mechanics for the owner; do not ask them to calculate hashes or write instruction files. Reuse explicit approval already given for the same destination and setup scope.
+After any agent-managed installation or update, read the installed copy and check this project's readiness before reporting completion. A request to use the skill also starts with this check. Do not wait for the next implementation request to disclose missing setup. File installation alone does not establish the project's vision or mandatory Hand rule.
+
+Inspect the governing rules, approved vision, companion lock, accepted digest, and required Hand instruction. If initial setup is incomplete, follow [setup](references/setup.md) and automatically finish the work covered by existing, applicable owner approval. Handle files and hashes for the owner. If approval is missing or setup was explicitly stopped, report what is missing and ask one short question to authorize or resume it; do not repeat an answered question. An update request alone does not cancel a previous stop, read-only, or explicit install-only restriction.
+
+Report installation status and project readiness separately and briefly: ready for Hand checks, setup incomplete with its missing prerequisite, or blocked by an established integrity failure. Verify a complete binding without changing it. Never treat a failed established lock as initial setup or regenerate it to obtain readiness. A file-copy installer may not execute these instructions; the agent handling installation or update must perform this handoff.
 
 Incomplete setup does not reopen an owner-approved destination. On a conflicting implementation request, return PAUSE with the conflict and missing prerequisites; do not propose replacement wording. If the owner says wait or stop, preserve the current state. A missing or mismatched previously established lock is a verification failure, not a fresh-setup opportunity.
 
@@ -34,7 +38,7 @@ The helper verifies integrity only. It cannot grant a Hand PASS or owner authori
 Before implementation:
 
 1. Verify the current vision and lock. Read the exact proposed work, what the user will do before and after it, and what the user will see when it finishes. A proposal too vague to compare requires PAUSE.
-2. Check whether the current environment supports subagents. When supported, launch one fresh read-only reviewer or oracle subagent and wait for its returned review. Give it a fresh context containing the exact locked vision, digest, proposal, user-visible result, and relevant evidence. It must not edit, implement, invent an exception, or act as owner authority. Discovering a reviewer tool or reusing an earlier review does not complete this step.
+2. Subagent review has priority and is required whenever supported. Check the environment's available or discoverable reviewer capabilities before declaring it unsupported. Launch one fresh read-only reviewer or oracle subagent and wait for its returned review; do not choose same-session review for convenience. Give it a fresh context containing the exact locked vision, digest, proposal, user-visible result, and relevant evidence. It must not edit, implement, invent an exception, or act as owner authority. Discovering a reviewer tool or reusing an earlier review does not complete this step.
 3. If subagents are unsupported, perform a dedicated read-only review yourself in this same session. Re-read the verified vision and compare every part of the proposal with its destination, checkpoints, and acceptance limits. This fallback needs no extra owner approval, new session, or separate CLI call. It is a same-agent review, not an independent review.
 4. In either mode, answer: **Does every part of the proposed work fit the locked Owner's Vision and preserve its achieved checkpoints without changing or straying from them?** Check the conclusion against the actual proposal and evidence. An unresolved conflict or inconclusive review requires PAUSE. A failed integrity check stops the gate before review. If a supported subagent was launched but its review failed or did not return, PAUSE; do not use the fallback to bypass that failure or an adverse review.
 

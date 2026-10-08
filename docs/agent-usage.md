@@ -2,7 +2,7 @@
 
 The skill follows the [Agent Skills directory format](https://agentskills.io/specification). Its instructions are plain Markdown, and its integrity helper needs only Python 3's standard library.
 
-**Every route needs** file access to the project and Python 3 for the integrity check. Use a fresh independent read-only reviewer subagent when supported. If subagents are unsupported, the same agent performs a dedicated review in the current session and identifies that method in its verdict. No additional session, CLI, or owner approval is needed for this fallback. The integrity, alignment, and authorization requirements still apply.
+**Every route needs** file access to the project and Python 3 for the integrity check. A fresh independent read-only reviewer subagent has priority and is required whenever supported. Check available or discoverable reviewer capabilities before using the fallback. If subagents are unsupported, the same agent performs a dedicated review in the current session and identifies that method in its verdict. No additional session, CLI, or owner approval is needed for this fallback. The integrity, alignment, and authorization requirements still apply.
 
 ## One-command installation
 
@@ -14,7 +14,9 @@ npx skills add AmmarAlBalkhi/owners-vision --skill owners-vision --copy
 
 The installer currently requires Node.js 22.20 or newer. Select your agent if prompted. `--copy` installs the complete skill without requiring symlinks. To choose an agent directly, add its `--agent` value from the table below. Keep the project scope; omit `--global` unless you want an installation shared across projects.
 
-Then ask your agent to use `owners-vision` in this project. It follows [first-use setup](../owners-vision/references/setup.md), obtains any missing destination/setup approval, creates the approved binding, and registers the mandatory Hand rule. You need not calculate hashes or write project instructions. Installation alone does not establish authority; the review method follows the host's available capabilities. [Manual binding instructions](../README.md#bind-your-project) are also available.
+An agent performing installation or an update must immediately read the installed `SKILL.md` and follow the [readiness procedure](../owners-vision/references/setup.md). It must report both installation status and project readiness before ending the task. Complete unfinished initial setup when existing approval still applies; if approval is missing or setup was explicitly stopped, ask one short question now. Verify an existing valid binding without changing it. Report an established integrity failure without silently repairing its lock. The owner need not calculate hashes or write project instructions.
+
+A file-copy installer may only place files. After running it manually, invoke `owners-vision` in the project so an agent performs the readiness check. [Manual binding instructions](../README.md#bind-your-project) are also available.
 
 The standalone skill and integrity helper need Python, not Node.js. Use the manual copy or ZIP route if you do not want the Node-based installer.
 

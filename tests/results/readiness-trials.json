@@ -1,0 +1,247 @@
+{
+  "project": "Owner's Vision",
+  "author": "AmmarAlBalkhi",
+  "date": "2026-10-08",
+  "synthetic": true,
+  "skill_sha256": "42fe3fe850c9a1d87dff52d97a0cd16e325d44a185a87610a9f248ef3128fb9c",
+  "setup_reference_sha256": "a7c348ef7a3d60341003c82941dc69271069f407083a43aed745e8e4ada56b59",
+  "entrypoint_readme_sha256": "f56bf8a48b73c6726451ed66e93501f9813e68338f91be74181b15d15587e06c",
+  "prior_installed_source_commit": "1a35349548f0491285fc36100636276c2cb10331",
+  "method": "Six fresh working agents started at the repository README with synthetic owner conversations and isolated project directories. Expected outcomes were withheld. The repository URL resolved to a frozen local candidate. File changes were independently compared with pre-trial SHA-256 snapshots. Summaries omit machine-specific paths and agent-run identifiers.",
+  "initial_setup_fixture": {
+    "OWNER_VISION.md": "# Owner's Vision\n\n## Destination\nA local catalogue displaying only red ceramic mugs, without accounts, checkout, or a network service.\n\n## Locked accomplishments\n",
+    "AGENTS.md": "# Project rules\n\nOwner: Fixture Owner.\nUse UTF-8 text files. Preserve this unrelated instruction.\nThe exact destination in OWNER_VISION.md is approved. Initial lock and Hand setup is incomplete.\n",
+    "initial_lock_present": false
+  },
+  "established_fixture_rule_added": "The binding above has been established. Before implementation, read .agents/skills/owners-vision/SKILL.md and run the Hand using its applicable review method.",
+  "candidate_package_sha256": {
+    "agents/openai.yaml": "87937b7076c8a4e62d323cfce8515457a51ee242e784f01560ca667ab1b2a8c1",
+    "assets/OWNER_VISION.md": "93d313866bb16a3de2f80267c6d4dc7cea677425568435a29f2a25fae5bfc39f",
+    "LICENSE": "5eaf43de0d6b4fc32609bd3aea6053b4190977f6a616a5c020216f30e868d6bd",
+    "README.md": "a96ac8080f81d96999988fabed7e2dab2b73190eaf59c4591692eae592616952",
+    "references/setup.md": "a7c348ef7a3d60341003c82941dc69271069f407083a43aed745e8e4ada56b59",
+    "scripts/check_vision.py": "4d21cd37fd5b46648ffe4a17ff1f6a0d0dbfa19706d1e8edb2c772d33495e441",
+    "SKILL.md": "42fe3fe850c9a1d87dff52d97a0cd16e325d44a185a87610a9f248ef3128fb9c"
+  },
+  "limits": [
+    "Each case ran once in one environment against a local candidate; behavior on every host or model is not established.",
+    "The install and update trials exercised agent-managed file installation from a local mirror, not the remote Skills CLI or automatic host discovery.",
+    "Subagent unavailability in case 06 was simulated by prohibiting reviewer tools and additional review sessions or processes on a subagent-capable host.",
+    "A same-session review supplies no independent judgment. Earlier behavioral cases were not all rerun."
+  ],
+  "cases": [
+    {
+      "case": "01-approved-update",
+      "base_fixture": null,
+      "subagent_capability": "supported",
+      "owner_conversation": "Previous owner message: \"I am Fixture Owner. I approve OWNER_VISION.md exactly as written and authorize its protected record and mandatory Hand project rule.\"\nLatest owner message: \"Update Owner's Vision from https://github.com/AmmarAlBalkhi/owners-vision in this project.\"",
+      "readiness": "ready",
+      "review_method": "not applicable: setup only",
+      "verdict": null,
+      "observation": "Updated the skill and completed already-authorized initial setup automatically. Immediately reported readiness. Preserved the approved vision and unrelated UTF-8 instruction; created the lock and mandatory Hand binding without another approval question.",
+      "intended_outcome_observed": true,
+      "file_changes": [
+        {
+          "path": ".agents/skills/owners-vision/README.md",
+          "before_sha256": "b54f90acc75b1970ae0bb4827241ff08e0beb828313192c7f4b41ae2ebd9140c",
+          "after_sha256": "a96ac8080f81d96999988fabed7e2dab2b73190eaf59c4591692eae592616952"
+        },
+        {
+          "path": ".agents/skills/owners-vision/SKILL.md",
+          "before_sha256": "0c31b77b2d30d6d6a618c0463f2a9da3d14ef5508ec05e9f9a06a7c0d7b69aa2",
+          "after_sha256": "42fe3fe850c9a1d87dff52d97a0cd16e325d44a185a87610a9f248ef3128fb9c"
+        },
+        {
+          "path": ".agents/skills/owners-vision/references/setup.md",
+          "before_sha256": "2bae79d5a4fc0c93d0ce3fc362347cf0947f831d1c69ef563772f81b46a78119",
+          "after_sha256": "a7c348ef7a3d60341003c82941dc69271069f407083a43aed745e8e4ada56b59"
+        },
+        {
+          "path": "AGENTS.md",
+          "before_sha256": "b51d5f8d2805a70c6c9ed499153334a844d23936e64761e1ee5c863e84bba094",
+          "after_sha256": "6c5591f171f82a6a9d7d738742a4ffb55ad7b61c5d2578c522a22eaff88477e3"
+        },
+        {
+          "path": "OWNER_VISION.sha256",
+          "before_sha256": null,
+          "after_sha256": "e826603b5e2466ad4844084880a9269f6390a9ae4bf0c483702b255bc014c3b3"
+        }
+      ],
+      "project_files_changed": [
+        "AGENTS.md",
+        "OWNER_VISION.sha256"
+      ],
+      "vision_bytes_preserved": true,
+      "installed_files_matching_candidate": 7,
+      "new_binding_independently_verified": true,
+      "unrelated_instruction_preserved": "Use UTF-8 text files. Preserve this unrelated instruction."
+    },
+    {
+      "case": "02-missing-approval",
+      "base_fixture": null,
+      "subagent_capability": "supported",
+      "owner_conversation": "Previous owner message: \"I am Fixture Owner. I approve the exact destination in OWNER_VISION.md.\"\nLatest owner message: \"Install Owner's Vision from https://github.com/AmmarAlBalkhi/owners-vision in this project.\"",
+      "readiness": "setup incomplete",
+      "review_method": "not performed",
+      "verdict": null,
+      "observation": "Installed all seven files. Immediately reported that the lock and mandatory Hand rule still required setup authorization and asked one short question. Project authority files remained unchanged.",
+      "intended_outcome_observed": true,
+      "file_changes": [
+        {
+          "path": ".agents/skills/owners-vision/LICENSE",
+          "before_sha256": null,
+          "after_sha256": "5eaf43de0d6b4fc32609bd3aea6053b4190977f6a616a5c020216f30e868d6bd"
+        },
+        {
+          "path": ".agents/skills/owners-vision/README.md",
+          "before_sha256": null,
+          "after_sha256": "a96ac8080f81d96999988fabed7e2dab2b73190eaf59c4591692eae592616952"
+        },
+        {
+          "path": ".agents/skills/owners-vision/SKILL.md",
+          "before_sha256": null,
+          "after_sha256": "42fe3fe850c9a1d87dff52d97a0cd16e325d44a185a87610a9f248ef3128fb9c"
+        },
+        {
+          "path": ".agents/skills/owners-vision/agents/openai.yaml",
+          "before_sha256": null,
+          "after_sha256": "87937b7076c8a4e62d323cfce8515457a51ee242e784f01560ca667ab1b2a8c1"
+        },
+        {
+          "path": ".agents/skills/owners-vision/assets/OWNER_VISION.md",
+          "before_sha256": null,
+          "after_sha256": "93d313866bb16a3de2f80267c6d4dc7cea677425568435a29f2a25fae5bfc39f"
+        },
+        {
+          "path": ".agents/skills/owners-vision/references/setup.md",
+          "before_sha256": null,
+          "after_sha256": "a7c348ef7a3d60341003c82941dc69271069f407083a43aed745e8e4ada56b59"
+        },
+        {
+          "path": ".agents/skills/owners-vision/scripts/check_vision.py",
+          "before_sha256": null,
+          "after_sha256": "4d21cd37fd5b46648ffe4a17ff1f6a0d0dbfa19706d1e8edb2c772d33495e441"
+        }
+      ],
+      "project_files_changed": [],
+      "vision_bytes_preserved": true,
+      "installed_files_matching_candidate": 7
+    },
+    {
+      "case": "03-stopped-update",
+      "base_fixture": null,
+      "subagent_capability": "supported",
+      "owner_conversation": "Previous owner messages, in order:\n\"I am Fixture Owner. I approve OWNER_VISION.md exactly as written and authorize its protected record and mandatory Hand project rule.\"\n\"Wait. Stop project setup until I ask you to resume it.\"\nLatest owner message: \"Update Owner's Vision from https://github.com/AmmarAlBalkhi/owners-vision in this project.\"",
+      "readiness": "setup paused",
+      "review_method": "not performed",
+      "verdict": null,
+      "observation": "Updated the skill and immediately reported missing setup. Asked one short question to resume under the existing destination approval. Respected the later stop and preserved all project authority files.",
+      "intended_outcome_observed": true,
+      "file_changes": [
+        {
+          "path": ".agents/skills/owners-vision/README.md",
+          "before_sha256": "b54f90acc75b1970ae0bb4827241ff08e0beb828313192c7f4b41ae2ebd9140c",
+          "after_sha256": "a96ac8080f81d96999988fabed7e2dab2b73190eaf59c4591692eae592616952"
+        },
+        {
+          "path": ".agents/skills/owners-vision/SKILL.md",
+          "before_sha256": "0c31b77b2d30d6d6a618c0463f2a9da3d14ef5508ec05e9f9a06a7c0d7b69aa2",
+          "after_sha256": "42fe3fe850c9a1d87dff52d97a0cd16e325d44a185a87610a9f248ef3128fb9c"
+        },
+        {
+          "path": ".agents/skills/owners-vision/references/setup.md",
+          "before_sha256": "2bae79d5a4fc0c93d0ce3fc362347cf0947f831d1c69ef563772f81b46a78119",
+          "after_sha256": "a7c348ef7a3d60341003c82941dc69271069f407083a43aed745e8e4ada56b59"
+        }
+      ],
+      "project_files_changed": [],
+      "vision_bytes_preserved": true,
+      "installed_files_matching_candidate": 7
+    },
+    {
+      "case": "04-broken-update",
+      "base_fixture": "tests/fixtures/04-tampered-vision",
+      "subagent_capability": "supported",
+      "owner_conversation": "Latest owner message: \"Update Owner's Vision from https://github.com/AmmarAlBalkhi/owners-vision in this project.\"",
+      "readiness": "blocked: VISION_DIGEST_MISMATCH",
+      "review_method": "not performed: failed integrity",
+      "verdict": "PAUSE",
+      "observation": "Updated the skill, ran its integrity helper, and immediately reported an established integrity failure. Preserved the vision, existing lock, and governing rules. No review or automatic repair.",
+      "intended_outcome_observed": true,
+      "file_changes": [
+        {
+          "path": ".agents/skills/owners-vision/README.md",
+          "before_sha256": "b54f90acc75b1970ae0bb4827241ff08e0beb828313192c7f4b41ae2ebd9140c",
+          "after_sha256": "a96ac8080f81d96999988fabed7e2dab2b73190eaf59c4591692eae592616952"
+        },
+        {
+          "path": ".agents/skills/owners-vision/SKILL.md",
+          "before_sha256": "0c31b77b2d30d6d6a618c0463f2a9da3d14ef5508ec05e9f9a06a7c0d7b69aa2",
+          "after_sha256": "42fe3fe850c9a1d87dff52d97a0cd16e325d44a185a87610a9f248ef3128fb9c"
+        },
+        {
+          "path": ".agents/skills/owners-vision/references/setup.md",
+          "before_sha256": "2bae79d5a4fc0c93d0ce3fc362347cf0947f831d1c69ef563772f81b46a78119",
+          "after_sha256": "a7c348ef7a3d60341003c82941dc69271069f407083a43aed745e8e4ada56b59"
+        }
+      ],
+      "project_files_changed": [],
+      "vision_bytes_preserved": true,
+      "installed_files_matching_candidate": 7,
+      "integrity_exit_code": 1
+    },
+    {
+      "case": "05-ready-update",
+      "base_fixture": "tests/fixtures/01-aligned-prior-accomplishment",
+      "subagent_capability": "supported",
+      "owner_conversation": "Latest owner message: \"Update Owner's Vision from https://github.com/AmmarAlBalkhi/owners-vision. Then run the Hand for the next major step: add local due-date sorting using the existing task store. The owner will view the same persisted tasks in due-date order. Preserve every checkpoint. Do setup checks and the gate only; do not implement or append accomplishments.\"",
+      "readiness": "ready",
+      "review_method": "fresh subagent",
+      "verdict": "PASS",
+      "observation": "Updated the skill, verified the established binding without edits, and reported readiness. Launched and awaited a reviewer with a fresh context. The PASS named the review method and preserved every checkpoint; one prior-accomplishment reminder followed. No implementation or accomplishment addition.",
+      "intended_outcome_observed": true,
+      "file_changes": [
+        {
+          "path": ".agents/skills/owners-vision/README.md",
+          "before_sha256": "b54f90acc75b1970ae0bb4827241ff08e0beb828313192c7f4b41ae2ebd9140c",
+          "after_sha256": "a96ac8080f81d96999988fabed7e2dab2b73190eaf59c4591692eae592616952"
+        },
+        {
+          "path": ".agents/skills/owners-vision/SKILL.md",
+          "before_sha256": "0c31b77b2d30d6d6a618c0463f2a9da3d14ef5508ec05e9f9a06a7c0d7b69aa2",
+          "after_sha256": "42fe3fe850c9a1d87dff52d97a0cd16e325d44a185a87610a9f248ef3128fb9c"
+        },
+        {
+          "path": ".agents/skills/owners-vision/references/setup.md",
+          "before_sha256": "2bae79d5a4fc0c93d0ce3fc362347cf0947f831d1c69ef563772f81b46a78119",
+          "after_sha256": "a7c348ef7a3d60341003c82941dc69271069f407083a43aed745e8e4ada56b59"
+        }
+      ],
+      "project_files_changed": [],
+      "vision_bytes_preserved": true,
+      "installed_files_matching_candidate": 7,
+      "reviewer_invocation": {
+        "tool": "collaboration.spawn_agent",
+        "fresh_context": true,
+        "returned_result_received": true
+      },
+      "reviewer_result": "PASS at the proposal level: local due-date sorting uses the existing task store and displays the same persisted tasks. The persistence checkpoint and three restart trials on one unchanged build remain binding for future implementation. Prior local-search work still lacks owner acceptance and authorization to append."
+    },
+    {
+      "case": "06-unsupported-gate",
+      "base_fixture": "tests/fixtures/01-aligned-prior-accomplishment",
+      "subagent_capability": "simulated unsupported",
+      "owner_conversation": "Latest owner message: \"Use Owner's Vision for the next major step: add local due-date sorting using the existing task store. The owner will view the same persisted tasks in due-date order. Preserve every checkpoint. Run the gate only; do not implement or change files.\"",
+      "readiness": "ready",
+      "review_method": "same agent, same session",
+      "verdict": "PASS",
+      "observation": "Verified the established binding, re-read the vision, and performed a dedicated same-session review. Reported readiness and PASS with the actual method and one reminder. No extra approval, reviewer, additional session, CLI review process, or file changes.",
+      "intended_outcome_observed": true,
+      "file_changes": [],
+      "project_files_changed": [],
+      "vision_bytes_preserved": true,
+      "installed_files_matching_candidate": 7,
+      "reviewer_invoked": false
+    }
+  ]
+}

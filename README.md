@@ -23,7 +23,7 @@ Owner's Vision gives the agent one fixed reference: the owner's vision file, loc
 ## How it works
 
 1. **Verify.** The vision's exact bytes must match its companion lock and the accepted digest in the project's rules. A mismatch, missing file, or ambiguous lock returns PAUSE. A small script does this check deterministically.
-2. **Review.** A fresh read-only subagent checks whether the proposed work fits the vision and preserves its checkpoints. If the environment does not support subagents, the same agent performs that review in the current session. The verdict identifies the method. Conflicts and inconclusive reviews return PAUSE.
+2. **Review.** A fresh read-only subagent is required whenever supported to check the proposed work against the vision and checkpoints. Same-session review is reserved for environments without subagent support. The verdict identifies the method. Conflicts and inconclusive reviews return PAUSE.
 3. **Verdict.** The agent returns a one-line banner (`THE HAND OF THE OWNER — PASS` or `— PAUSE`) and one to three reasons. PASS only lets work that is already authorized continue.
 4. **Remind.** When a new major step begins and the previous step has verified results that aren't recorded yet, the agent adds one line: *Consider adding the previous step's verified accomplishments to Owner's Vision.*
 5. **Record.** Only after the owner explicitly authorizes it, the agent appends concise checkpoint lines. Every earlier byte stays unchanged, and only the declared digests are updated to match.
@@ -74,6 +74,8 @@ npx skills add AmmarAlBalkhi/owners-vision --skill owners-vision --copy
 
 This route needs Node.js 22.20 or newer. Select your agent if prompted, then [bind your project](#bind-your-project). The installer copies the whole skill and its resources into the agent's project skill directory. The manual and ZIP routes below need no Node.js.
 
+When an agent handles installation or updates, it must immediately read the installed `SKILL.md` and check project readiness. It completes initial setup covered by existing approval, or promptly asks for the missing approval or permission to resume. Its completion message distinguishes the installed skill from a project ready for Hand checks. A file-copy installer alone does not run this check; after a manual or CLI-only install, invoke the skill in your agent.
+
 File installation for Claude Code, Gemini CLI, OpenCode, and the shared skill directory was checked on Windows with Skills CLI 1.7.1. Every packaged file remained byte-identical, and the installed integrity helper passed valid and tampered-input checks. Agent execution on those hosts has not been tested. See [installation evidence and support limits](docs/agent-usage.md#installation-evidence).
 
 | Your setup | What to do |
@@ -87,9 +89,9 @@ Every route needs file access to the project and Python 3 for the integrity chec
 
 ## Bind your project
 
-On first use, ask your agent to use the skill in your project. It follows the [setup procedure](owners-vision/references/setup.md), confirms your destination and setup permission, then handles the vision file, hashes, and project instructions. You do not need to calculate a hash or write these files yourself. Installing the skill alone does not complete setup.
+The agent follows the [setup procedure](owners-vision/references/setup.md) immediately after an agent-managed install or update, and on first use. It reuses your approved destination and setup permission, then handles the vision file, hashes, and project instructions. If authorization is missing or setup was stopped, it asks one short question then. You do not need to calculate a hash or write these files yourself. A valid existing binding is verified without changes; a broken established lock is reported without automatic repair.
 
-The project rules make the Hand mandatory before implementation. The Hand verifies the locked vision and uses a fresh read-only subagent when supported, or the same agent in the same session otherwise. A missing lock, unresolved conflict, or failed or inconclusive review produces PAUSE. An incomplete lock does not reopen an approved destination for replacement.
+The project rules make the Hand mandatory before implementation. The Hand verifies the locked vision and must use a fresh read-only subagent whenever supported. Same-session review is only for unsupported environments. A missing lock, unresolved conflict, or failed or inconclusive review produces PAUSE. An incomplete lock does not reopen an approved destination for replacement.
 
 For manual setup, use your agent's existing governing instruction file:
 
@@ -125,7 +127,8 @@ Filenames are examples; use your own. Never regenerate the lock to make a failed
 | --- | --- | --- |
 | [Integrity checks](tests/run_tests.py) | 12/12 pass | Valid bindings, altered vision or lock bytes, missing files, ambiguous or misnamed locks, invalid digests, CRLF bytes, and an append with re-synced digests |
 | [CLI checks](tests/test_cli.py) | 6/6 pass | Exact instruction export, entry-point path, JSON results, exit codes, non-ASCII paths, and runs from other working directories |
-| [Review-method trials](tests/fallback-trials.md) | 5/5 intended outcomes observed | Actual fresh subagent review, same-session review, conflict, failed integrity, and first-use setup; unsupported capability simulated |
+| [Installation and readiness trials](tests/readiness-trials.md) | 6/6 intended outcomes observed | Immediate readiness, authorized automatic setup, missing approval, prior stop, broken lock, and both review methods; local installation source and simulated unsupported capability |
+| [Earlier review-method trials](tests/fallback-trials.md) | 5/5 intended outcomes observed | Actual fresh subagent review, same-session review, conflict, failed integrity, and first-use setup; unsupported capability simulated |
 | [Earlier first-use and reviewer trials](tests/workflow-trials.md) | 9/9 intended outcomes observed | Historical setup and review trials before the same-session fallback; the old unavailable-reviewer outcome is identified in the record |
 | [Earlier behavioral cases](tests/results/observed-trials.json) | 6/6 reached the intended outcome | Historical recorded responses to synthetic fixtures; see the limits below. |
 

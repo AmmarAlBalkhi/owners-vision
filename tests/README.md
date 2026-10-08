@@ -15,7 +15,7 @@ The six CLI checks cover exact instruction export, a resolvable entry-point path
 
 ## Behavioral cases
 
-The [review-method trials](fallback-trials.md) cover the current subagent and same-session routes. Earlier [first-use and reviewer workflow trials](workflow-trials.md) cover nine cases from before the fallback was introduced, including actual nested reviewer calls and the next gate after an authorized addition. Their [receipt](results/setup-workflow.json) records the tested instruction hashes and the limits of the evaluation.
+The [installation and readiness trials](readiness-trials.md) cover immediate readiness after agent-managed installation or update, automatic completion of authorized setup, missing approval, a previous stop, an established broken lock, and both review methods. The earlier [review-method trials](fallback-trials.md) also cover conflict and first-use behavior with unsupported subagents. Earlier [first-use and reviewer workflow trials](workflow-trials.md) cover nine cases from before the fallback was introduced, including actual nested reviewer calls and the next gate after an authorized addition. Each receipt identifies its tested instruction hashes and evaluation limits.
 
 The six supplied fixtures cover:
 
