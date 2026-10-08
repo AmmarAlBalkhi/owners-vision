@@ -6,6 +6,8 @@ Owner's Vision is a set of instructions for AI coding tools. Before new work sta
 
 Created by [Ammar Al Balkhi](https://github.com/ammarbalkhi) · MIT license · Python 3 standard library · [Agent Skills](https://agentskills.io/specification) format
 
+[![Skills CLI install count](https://skills.sh/b/ammarbalkhi/owners-vision "Installs recorded by skills.sh; excludes manual copies and direct GitHub downloads")](https://skills.sh/ammarbalkhi/owners-vision)
+
 [Give feedback or suggest an improvement](https://github.com/ammarbalkhi/owners-vision/issues/new/choose)
 
 For sharing, use the [pictures and ready-to-paste LinkedIn post](docs/linkedin/README.md).
