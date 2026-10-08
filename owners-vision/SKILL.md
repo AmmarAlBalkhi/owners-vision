@@ -1,11 +1,19 @@
 ---
 name: owners-vision
-description: Run the Hand of the Owner before new project implementation against the owner's locked vision and achieved checkpoints; remind the owner about prior accomplishments and append them only with explicit authorization.
+description: Set up an owner-approved project vision, then run the Hand of the Owner with a fresh independent reviewer before implementation; remind about verified accomplishments and append them only with explicit authorization.
 ---
 
 # The Hand of the Owner
 
 Protect the owner's fixed product destination and every owner-locked accomplishment. Use before new implementation and when the owner explicitly authorizes an accomplishment addition. This skill grants no authority to implement, commit, publish, or change a project's direction.
+
+**Owner's Vision** is the owner's authoritative destination and recorded accomplishments. **The Hand of the Owner** is the checking role defined here; its reviewer and verdict cannot change that authority.
+
+## First use and incomplete setup
+
+A request to use this skill starts by checking the project's setup. Installing the skill alone does not establish a vision or make its gate mandatory. If the initial binding is absent, follow [first-use setup](references/setup.md): obtain any missing owner approval, complete the authorized lock and project-rule setup, and verify it. Handle these mechanics for the owner; do not ask them to calculate hashes or write instruction files. Reuse explicit approval already given for the same destination and setup scope.
+
+Incomplete setup does not reopen an owner-approved destination. On a conflicting implementation request, return PAUSE with the conflict and missing prerequisites; do not propose replacement wording. If the owner says wait or stop, preserve the current state. A missing or mismatched previously established lock is a verification failure, not a fresh-setup opportunity.
 
 ## Project authority and lock
 
@@ -26,11 +34,13 @@ The helper verifies integrity only. It cannot grant a Hand PASS or owner authori
 Before implementation:
 
 1. Verify the current vision and lock. Read the exact proposed work, what the user will do before and after it, and what the user will see when it finishes. A proposal too vague to compare requires PAUSE.
-2. Launch one fresh read-only reviewer or oracle. Give it the exact locked vision, digest, proposal, and user-visible result. It must not edit, implement, invent an exception, or act as owner authority. If independent review is unavailable or inconclusive, return PAUSE.
+2. Launch one fresh read-only reviewer or oracle subagent and wait for its returned review. Give it the exact locked vision, digest, proposal, and user-visible result. It must not edit, implement, invent an exception, or act as owner authority. Discovering a reviewer tool, reviewing your own work, or reusing an earlier review does not complete this step. If a separate reviewer cannot actually be launched or its review is unavailable or inconclusive, return PAUSE. A failed integrity check stops the gate before this stage.
 3. Ask it: **Does every part of the proposed work fit the locked Owner's Vision and preserve its achieved checkpoints without changing or straying from them?**
 4. Independently compare the proposal with the vision and the review. Preserve every checkpoint's verified behavior and acceptance limits. An unresolved conflict requires PAUSE.
 
 An implementation's success does not justify rewriting the owner's destination or lowering an achieved checkpoint.
+
+On a conflict, report it and stop implementation. Do not offer to replace, weaken, or renegotiate the vision to make the proposed work fit. Preserve the actual reviewer invocation and result in the session's normal record; do not claim an independent review without them.
 
 ## Accomplishment reminder
 
@@ -54,6 +64,8 @@ After authorization:
 - Reverify the current lock immediately before writing. Append while preserving every existing byte; never rewrite, delete, reformat, narrow, or replace existing vision text or checkpoint entries.
 - Synchronize only the existing lock and accepted-digest references declared by the project's governing rules. Authorization for the accomplishment addition covers its necessary hash synchronization, not unrelated governance edits.
 - Confirm that the previous bytes remain an unchanged prefix, every declared digest matches the resulting file, and no unrelated file changed. Report the added lines and verification. If synchronization is incomplete, report PAUSE and do not treat the resulting state as locked.
+
+After a completed addition, subsequent checks read the newly synchronized binding for this same project. Do not ask for the same addition's authorization again or reuse a review of the earlier bytes. Unresolved governing-instruction conflicts still require PAUSE; never substitute another checkout's binding.
 
 Do not append an accomplishment to obtain alignment for conflicting work.
 

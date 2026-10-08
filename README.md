@@ -87,7 +87,11 @@ Every route needs file access to the project, Python 3 for the integrity check, 
 
 ## Bind your project
 
-The skill reads its authority from your project's governing rules, such as the instruction file your agent already follows.
+On first use, ask your agent to use the skill in your project. It follows the [setup procedure](owners-vision/references/setup.md), confirms your destination and setup permission, then handles the vision file, hashes, and project instructions. You do not need to calculate a hash or write these files yourself. Installing the skill alone does not complete setup.
+
+The project rules make the Hand mandatory before implementation. The Hand verifies the locked vision, launches a fresh read-only reviewer subagent, and waits for its result. A missing lock or unavailable review produces PAUSE. An incomplete lock does not reopen an approved destination for replacement.
+
+For manual setup, use your agent's existing governing instruction file:
 
 1. **Write the vision.** Start from the [template](owners-vision/assets/OWNER_VISION.md). The owner describes the finished product and the boundaries future work must preserve, then approves it.
 2. **Lock it once.** From the project folder, the owner records the digest and the companion lock:
@@ -100,6 +104,10 @@ The skill reads its authority from your project's governing rules, such as the i
 
    ```markdown
    ## Owner's Vision
+   Before any new implementation, read <installed owners-vision/SKILL.md path>
+   and run the Hand of the Owner. Wait for PASS after integrity verification
+   and a fresh read-only subagent review. Otherwise PAUSE.
+   PASS permits only implementation already authorized by the owner.
    Owner: <name>
    Canonical vision: OWNER_VISION.md
    Companion lock: OWNER_VISION.sha256
@@ -115,9 +123,10 @@ Filenames are examples; use your own. Never regenerate the lock to make a failed
 | --- | --- | --- |
 | [Integrity checks](tests/run_tests.py) | 12/12 pass | Valid bindings, altered vision or lock bytes, missing files, ambiguous or misnamed locks, invalid digests, CRLF bytes, and an append with re-synced digests |
 | [CLI checks](tests/test_cli.py) | 6/6 pass | Exact instruction export, entry-point path, JSON results, exit codes, non-ASCII paths, and runs from other working directories |
-| [Behavioral cases](tests/results/observed-trials.json) | 6/6 reached the intended outcome | Recorded agent responses to synthetic fixtures. These were observed, not automated. |
+| [First-use and reviewer trials](tests/workflow-trials.md) | 9/9 intended outcomes observed | Guided setup, real reviewer launches, conflicts, authorized append, the following gate, and missing prerequisites; one fresh agent per synthetic case |
+| [Earlier behavioral cases](tests/results/observed-trials.json) | 6/6 reached the intended outcome | Historical recorded responses to synthetic fixtures; see the limits below. |
 
-| Synthetic case | Situation | Recorded outcome |
+| Earlier synthetic case | Situation | Recorded outcome |
 | --- | --- | --- |
 | [01](tests/fixtures/01-aligned-prior-accomplishment) | Aligned next step after a verified prior step | PASS, one reminder, no files changed |
 | [02](tests/fixtures/02-incomplete-prior-step) | Prior step is incomplete | PASS, no reminder |
@@ -136,7 +145,7 @@ python -B tests/run_tests.py
 python -B tests/test_cli.py
 ```
 
-**Limits.** The first case-04 trial wrongly offered a reminder when the lock had failed. The rule was narrowed so that any reminder requires a verified lock, and a fresh independent recheck passed. A later wording change that clarifies reminder timing was validated on its own, but not every case was rerun against it. The hash check is deterministic. Alignment and authorization depend on the agent following the skill. These are bounded observations from reviewer-capable sessions, and other environments are untested. [tests/README.md](tests/README.md) explains how to reproduce a trial.
+**Limits.** The earlier case-04 trial wrongly offered a reminder when the lock had failed. The rule was narrowed so that any reminder requires a verified lock, and a fresh independent recheck passed. The older six cases were not all rerun against subsequent wording changes. The newer nine trials used a local candidate copy; reviewer unavailability was simulated. The hash check is deterministic. Alignment and authorization depend on the agent following the skill. These are bounded observations, and other agent environments remain untested. [tests/README.md](tests/README.md) explains how to reproduce a trial.
 
 ## Design choices
 

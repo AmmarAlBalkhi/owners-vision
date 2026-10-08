@@ -14,7 +14,7 @@ npx skills add AmmarAlBalkhi/owners-vision --skill owners-vision --copy
 
 The installer currently requires Node.js 22.20 or newer. Select your agent if prompted. `--copy` installs the complete skill without requiring symlinks. To choose an agent directly, add its `--agent` value from the table below. Keep the project scope; omit `--global` unless you want an installation shared across projects.
 
-Then [bind your project's vision and lock](../README.md#bind-your-project), and ask your agent to use `owners-vision` before the next implementation step. Installation alone does not create or approve a project vision, supply an independent reviewer, or authorize additions.
+Then ask your agent to use `owners-vision` in this project. It follows [first-use setup](../owners-vision/references/setup.md), obtains any missing destination/setup approval, creates the approved binding, and registers the mandatory Hand rule. You need not calculate hashes or write project instructions. Installation alone does not establish authority or supply an independent reviewer. [Manual binding instructions](../README.md#bind-your-project) are also available.
 
 The standalone skill and integrity helper need Python, not Node.js. Use the manual copy or ZIP route if you do not want the Node-based installer.
 
@@ -30,6 +30,8 @@ Tested on Windows with PowerShell, Node.js 24.19.0, and Skills CLI 1.7.1 on 2026
 | Shared skill directory | `universal` | `.agents/skills/owners-vision/` | Verified on Windows | Depends on the client |
 
 Several targets share one installed copy. These results verify the installer's file placement and the Python helper; they do not establish that each agent discovers the skill, launches an independent reviewer, or follows every authorization rule. Linux, macOS, global installations, and other targets have not been tested here. The README's synthetic behavioral trials are separate evidence.
+
+On 2026-10-08, the revised seven-file package was also installed from a local candidate repository into a disposable shared skill directory using the same installer. All seven files matched, including the new setup reference; the installed helper again accepted intact input and rejected tampered input without edits. This was a local installation check with telemetry disabled. [Receipt](../tests/results/setup-workflow.json).
 
 To repeat the installation check with the same installer version, use `skills@1.7.1` in place of `skills`, select the targets above, and use a disposable project. The unversioned command resolves the current installer release. Either command fetches the repository's current default branch; the receipt records the source commit tested here.
 

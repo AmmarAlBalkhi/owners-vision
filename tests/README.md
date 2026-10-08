@@ -15,6 +15,8 @@ The six CLI checks cover exact instruction export, a resolvable entry-point path
 
 ## Behavioral cases
 
+The latest [first-use and reviewer workflow trials](workflow-trials.md) cover nine additional cases against the revised setup instructions, including actual nested reviewer calls and the next gate after an authorized addition. Their [receipt](results/setup-workflow.json) records the tested instruction hashes and the limits of the evaluation.
+
 The six supplied fixtures cover:
 
 1. An aligned next step with a verified prior accomplishment.
