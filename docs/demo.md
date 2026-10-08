@@ -1,28 +1,20 @@
 # Owner's Vision in action
 
-The [demo image](demo.png) shows what you get while working with Owner's Vision: **your agent moves forward, and you keep control**. It illustrates a synthetic task project, with concise examples of the messages and checkpoint lines. It is not an application screenshot. An [editable SVG](demo.svg) keeps the lettering crisp.
+The [workflow picture](demo.png) explains what the skill asks an agent to do as a project grows. It is a diagram, not a transcript or a screenshot. [Editable SVG](demo.svg).
 
-## Clear direction
-
-New implementation is checked against the owner's locked vision. A fresh subagent reviews alignment when supported; otherwise the same agent reviews in the current session. The verdict identifies the method, and an unresolved conflict pauses the work.
-
-## Protected progress
-
-Verified accomplishments can become checkpoints that future work must preserve. Existing vision text remains intact when new lines are added.
-
-## Your permission
-
-At the beginning of the next major step, the Hand can give one brief reminder about the previous step's verified, unrecorded accomplishments. The owner explicitly authorizes adding them in their own words. The agent writes concise facts and synchronizes the declared digests.
-
-The picture follows three interactions:
+**Owner's Vision** is the saved destination and recorded accomplishments. **The Hand of the Owner** is the role that checks proposed work against them.
 
 | When | What you get |
 | --- | --- |
-| Before implementation | A PASS for aligned work, or a PAUSE when a proposal discards tasks that must survive restarts. PASS permits only otherwise authorized work. |
-| At the next major step | One short reminder about the preceding step's verified, unrecorded search accomplishments. Only the addition waits for permission. |
-| After you authorize adding them | Concise accomplishment lines become checkpoints. All earlier vision text stays intact. |
+| Before implementation | The Hand verifies the vision and reviews alignment. PASS allows already-authorized work to continue. PAUSE stops implementation until a conflict or unresolved check is addressed. |
+| At the next major step | After verifying the lock, the Hand assesses the preceding step. Significant, verified progress that is not recorded yet can receive one short reminder. Starting a new step alone does not prove completion. |
+| Only after you authorize adding lines | The agent appends concise, factual accomplishments and synchronizes the declared digests. Every earlier byte remains intact. |
 
-The picture's shortened responses and checkpoint are illustrative summaries, rather than verbatim trial transcripts. The reminder and verdict format follow the skill. Exact recorded evidence is below.
+The reminder does not authorize an addition. Only that addition waits for permission; otherwise authorized work that passes the gate can continue. You authorize the action in your own words and do not need to dictate the lines.
+
+Alignment uses a fresh read-only reviewer subagent whenever supported. Unsupported environments use a dedicated review by the same agent in the current session. The verdict identifies the method. A failed supported review cannot be bypassed by switching methods.
+
+The picture summarizes the workflow. The recorded trials below provide separate evidence, with their limitations preserved.
 
 ## Recorded examples
 

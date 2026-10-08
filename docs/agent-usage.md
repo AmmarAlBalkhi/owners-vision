@@ -16,7 +16,7 @@ The installer currently requires Node.js 22.20 or newer. Select your agent if pr
 
 An agent performing installation or an update must immediately read the installed `SKILL.md` and follow the [readiness procedure](../owners-vision/references/setup.md). It must report both installation status and project readiness before ending the task. Complete unfinished initial setup when existing approval still applies; if approval is missing or setup was explicitly stopped, ask one short question now. Verify an existing valid binding without changing it. Report an established integrity failure without silently repairing its lock. The owner need not calculate hashes or write project instructions.
 
-A file-copy installer may only place files. After running it manually, invoke `owners-vision` in the project so an agent performs the readiness check. [Manual binding instructions](../README.md#bind-your-project) are also available.
+A file-copy installer may only place files. After running it manually, invoke `owners-vision` in the project so an agent performs the readiness check. [Manual binding instructions](#manual-project-binding) are also available.
 
 The standalone skill and integrity helper need Python, not Node.js. Use the manual copy or ZIP route if you do not want the Node-based installer.
 
@@ -81,6 +81,36 @@ python owner_vision.py skill-path
 ## Sandboxed or remote agents
 
 Transfer the complete skill folder, or [the self-contained ZIP](https://github.com/ammarbalkhi/owners-vision/releases/latest/download/owners-vision.zip), along with the relevant project files, into the agent's filesystem. Keep relative paths, and use that environment's actual project binding.
+
+## Manual project binding
+
+Use this path for initial setup after the owner approves the vision and its setup. An agent can handle these steps for the owner. Never use initial setup to repair an established integrity failure.
+
+1. **Write the vision.** Start from the [template](../owners-vision/assets/OWNER_VISION.md). The owner describes the finished product and the boundaries future work must preserve, then approves it.
+2. **Lock it once.** From the project folder, the owner records the digest and the companion lock:
+
+   ```bash
+   python -c "import hashlib, pathlib; v = pathlib.Path('OWNER_VISION.md'); d = hashlib.sha256(v.read_bytes()).hexdigest(); pathlib.Path('OWNER_VISION.sha256').write_bytes(f'{d}  {v.name}\n'.encode()); print(d)"
+   ```
+
+3. **Declare the binding** in the governing rules, using the printed digest:
+
+   ```markdown
+   ## Owner's Vision
+   Before any new implementation, read <installed owners-vision/SKILL.md path>
+   and run the Hand of the Owner. Wait for PASS after integrity verification
+   and alignment review: a fresh read-only subagent when supported,
+   or the same agent in the same session otherwise. Identify the method.
+   A failed or inconclusive review or unresolved conflict requires PAUSE.
+   PASS permits only implementation already authorized by the owner.
+   Owner: <name>
+   Canonical vision: OWNER_VISION.md
+   Companion lock: OWNER_VISION.sha256
+   Accepted vision SHA-256: <digest>
+   Digest references to update after an authorized append: this accepted digest and the companion lock.
+   ```
+
+Filenames are examples; use your own. Never regenerate the lock to make a failed check pass. Find out why the check failed before proceeding. The [governing rules of a synthetic fixture](../tests/fixtures/01-aligned-prior-accomplishment/AGENTS.md) show a complete binding.
 
 ## Integrity check reference
 

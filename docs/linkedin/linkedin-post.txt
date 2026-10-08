@@ -6,11 +6,11 @@ It’s an open-source skill for AI coding agents. Before implementation, it requ
 
 ✅ PASS: The plan fits your vision and preserves completed work. Work you’ve already authorized can continue.
 
-🛑 FAIL → PAUSE: Something conflicts or cannot be verified. The agent is instructed to pause and explain the blocker.
+🛑 PAUSE: Something conflicts or cannot be verified. The agent is instructed to pause and explain the blocker.
 
 It may be especially useful for vibe coders moving quickly through iterations who want a consistent check on the project’s direction.
 
-The picture shows when work can continue and when the agent must pause.
+The picture shows the check, the accomplishment reminder, and the lines added only after the owner authorizes them.
 
 Free and open source under MIT:
 https://github.com/ammarbalkhi/owners-vision

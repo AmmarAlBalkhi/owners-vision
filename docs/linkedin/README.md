@@ -2,19 +2,16 @@
 
 Created by Ammar Al Balkhi.
 
-[Full workflow picture](../demo.png) · [PASS / FAIL picture](owners-vision-cover.png) · [Copy the LinkedIn post](linkedin-post.txt)
+[Workflow picture](../demo.png) · [LinkedIn cover](owners-vision-cover.png) · [Ready-to-copy post](linkedin-post.txt)
 
-Upload either PNG with the LinkedIn post. Use the full workflow picture to show the check, reminder, and authorized accomplishment additions, or the PASS / FAIL picture for a shorter overview.
+Upload either PNG with the post. Both use the skill's actual verdicts: **PASS** and **PAUSE**.
 
-![Owner's Vision checks the next step: PASS allows authorized work to continue; FAIL pauses implementation.](owners-vision-cover.png)
+![Owner's Vision: check proposed work, remind about unrecorded verified progress, and add accomplishment lines only after owner authorization.](owners-vision-cover.png)
 
-The decision before new implementation:
+- **PASS:** integrity and alignment checks pass; already-authorized work can continue.
+- **PAUSE:** a conflict or unresolved check stops implementation until it is resolved and checked again.
+- **Reminder:** at the next major step, the Hand can suggest recording verified accomplishments. Adding them requires explicit owner authorization and preserves every earlier line.
 
-- **PASS:** the proposed work fits the owner's vision and preserves verified accomplishments. Vision integrity and alignment review must both pass. The review uses a fresh subagent when supported, or the same agent in the current session otherwise. Work that the owner has already authorized may continue.
-- **FAIL → PAUSE:** a conflict, missing integrity evidence, an ambiguous proposal, or a failed or inconclusive review stops implementation. The agent reports the blocker to the owner. The issue must be resolved and the check repeated before work can proceed.
+These are workflow illustrations. [Text explanation and recorded evidence](../demo.md).
 
-The skill's literal verdicts are `THE HAND OF THE OWNER — PASS` and `THE HAND OF THE OWNER — PAUSE`. The picture's **FAIL** describes a failed or incomplete check; **PAUSE** is the resulting action. PASS does not grant owner authorization.
-
-These pictures illustrate the workflow. The [text version](../demo.md) also covers the accomplishment reminder and additions made only with the owner's explicit permission.
-
-Editable artwork: [full workflow SVG](../demo.svg) · [PASS / FAIL SVG](owners-vision-cover.svg).
+Editable sources: [workflow SVG](../demo.svg) · [LinkedIn SVG](owners-vision-cover.svg). The [social preview](../social-preview.png) is sized for repository link cards.

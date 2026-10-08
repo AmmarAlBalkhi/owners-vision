@@ -1,76 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1080" viewBox="0 0 1800 1080" role="img" aria-labelledby="title description">
-<title id="title">Owner's Vision: what happens as you work</title>
-<desc id="description">Three illustrative stages: the Hand checks proposed implementation and returns PASS or PAUSE; at the next major step it can remind the owner about verified accomplishments; after explicit authorization it appends concise checkpoint lines while preserving earlier text.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1140" viewBox="0 0 1000 1140" role="img" aria-labelledby="title description">
+<title id="title">Owner's Vision: check, remind, record</title>
+<desc id="description">The Hand checks the saved vision and proposed work before implementation. PASS lets already-authorized work continue; PAUSE stops for an unresolved check or conflict. At the next major step, unrecorded verified progress can receive a reminder. Only explicit owner authorization permits concise accomplishment additions, preserving all earlier text.</desc>
 <metadata>Created by Ammar Al Balkhi. Owner's Vision.</metadata>
-<rect x="0" y="0" width="1800" height="1080" rx="0" fill="#F6F5EF"/>
-<circle cx="100" cy="77" r="27" fill="#E9F3EC"/>
-<path d="M88 91 L107 65 L115 72 Z" fill="#0E644E"/><path d="M88 91 L96 78 L107 65 L100 84 Z" fill="#103A32"/>
-<text x="144" y="91" font-family="Arial, Helvetica, sans-serif" font-size="43" font-weight="700" fill="#103A32" >Owner's Vision</text>
-<text x="1728" y="71" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#51675F" text-anchor="end">Created by</text>
-<text x="1728" y="101" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#103A32" text-anchor="end">Ammar Al Balkhi</text>
-<text x="72" y="193" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="700" fill="#103A32" >Your agent moves forward.</text>
-<text x="72" y="269" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="700" fill="#103A32" >You keep control.</text>
-<text x="72" y="319" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" fill="#51675F" >See the checks, reminders, and checkpoint lines you get as you work.</text>
-<rect x="72" y="354" width="1656" height="65" rx="14" fill="#E9F3EC"/>
-<circle cx="103" cy="386" r="15" fill="#0E644E"/>
-<path d="M95 386 l4.8 4.8 l10.4 -11.52" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="131" y="395" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#0E644E" letter-spacing="1.1">LOCKED VISION</text>
-<text x="322" y="395" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="400" fill="#103A32" >Tasks remain local and persist across restarts.</text>
-<text x="1702" y="395" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#51675F" text-anchor="end">Illustrative task project</text>
-<path d="M598 451 L598 974" fill="none" stroke="#D7E1D9" stroke-width="2"/>
-<path d="M1164 451 L1164 974" fill="none" stroke="#D7E1D9" stroke-width="2"/>
-<circle cx="598" cy="467" r="16" fill="#F6F5EF"/>
-<path d="M591 467 h14 m-5 -5 l5 5 -5 5" fill="none" stroke="#51675F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="1164" cy="467" r="16" fill="#F6F5EF"/>
-<path d="M1157 467 h14 m-5 -5 l5 5 -5 5" fill="none" stroke="#51675F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="93" cy="466" r="21" fill="#103A32"/>
-<text x="93" y="474" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
-<text x="129" y="475" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#103A32" >Before implementation</text>
-<text x="72" y="521" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#51675F" >New work is checked against your vision.</text>
-<circle cx="659" cy="466" r="21" fill="#103A32"/>
-<text x="659" y="474" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
-<text x="695" y="475" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#103A32" >At the next major step</text>
-<text x="638" y="521" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#51675F" >Verified progress gets one short reminder.</text>
-<circle cx="1225" cy="466" r="21" fill="#103A32"/>
-<text x="1225" y="474" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
-<text x="1261" y="475" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#103A32" >After you authorize</text>
-<text x="1204" y="521" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#51675F" >Concise facts become protected checkpoints.</text>
-<text x="72" y="565" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#51675F" letter-spacing="1.1">PROPOSED STEP</text>
-<rect x="72" y="582" width="524" height="73" rx="14" fill="#FFFFFF" stroke="#D7E1D9" stroke-width="2"/>
-<text x="96" y="628" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="400" fill="#103A32" >Add local due-date sorting.</text>
-<text x="72" y="695" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#51675F" letter-spacing="1.1">THE HAND RESPONDS</text>
-<rect x="72" y="712" width="524" height="129" rx="14" fill="#E9F3EC"/>
-<text x="96" y="751" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#0E644E" >THE HAND OF THE OWNER — PASS</text>
-<text x="96" y="792" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#103A32" >Fits the locked vision. Otherwise authorized</text>
-<text x="96" y="824" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#103A32" >work may continue.</text>
-<rect x="72" y="863" width="524" height="103" rx="14" fill="#FFF0DF"/>
-<text x="96" y="899" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#8A461B" >Discard saved tasks on restart instead?</text>
-<text x="96" y="938" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#8A461B" >PAUSE — implementation stops.</text>
-<text x="638" y="565" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#51675F" letter-spacing="1.1">PREVIOUS STEP: VERIFIED, UNRECORDED</text>
-<text x="638" y="606" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="400" fill="#103A32" >Local search passed its synthetic checks.</text>
-<text x="638" y="655" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#51675F" letter-spacing="1.1">ONE SHORT REMINDER</text>
-<rect x="638" y="672" width="524" height="173" rx="14" fill="#FFFFFF" stroke="#D7E1D9" stroke-width="2"/>
-<rect x="638" y="693" width="4" height="131" rx="2" fill="#0E644E"/>
-<text x="662" y="714" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" fill="#103A32" >Consider adding the previous step's</text>
-<text x="662" y="753" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" fill="#103A32" >verified accomplishments to</text>
-<text x="662" y="792" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" fill="#103A32" >Owner's Vision.</text>
-<text x="638" y="886" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#51675F" >Only the addition waits for your permission.</text>
-<text x="638" y="924" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#51675F" >Aligned, authorized work can continue.</text>
-<text x="1204" y="565" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#51675F" letter-spacing="1.1">OWNER AUTHORIZES THE ADDITION</text>
-<rect x="1204" y="582" width="524" height="96" rx="14" fill="#FFFFFF" stroke="#D7E1D9" stroke-width="2"/>
-<text x="1228" y="620" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="400" fill="#103A32" >Add the verified search accomplishments</text>
-<text x="1228" y="654" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="400" fill="#103A32" >to my vision.</text>
-<text x="1204" y="720" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#51675F" letter-spacing="1.1">THE AGENT ADDS CONCISE LINES</text>
-<rect x="1204" y="737" width="524" height="178" rx="14" fill="#FFFFFF" stroke="#D7E1D9" stroke-width="2"/>
-<text x="1228" y="773" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#51675F" >Original vision + earlier checkpoints</text>
-<path d="M1228 789 L1704 789" fill="none" stroke="#D7E1D9" stroke-width="2"/>
-<rect x="1220" y="804" width="492" height="97" rx="8" fill="#E9F3EC"/>
-<text x="1233" y="834" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#103A32" >Checkpoint: synthetic search checks passed;</text>
-<text x="1233" y="863" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#103A32" >stored tasks and restart persistence</text>
-<text x="1233" y="891" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#103A32" >were preserved.</text>
-<path d="M1206 952.5 l6.8999999999999995 6.8999999999999995 l14.950000000000001 -16.56" fill="none" stroke="#0E644E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="1242" y="960" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#0E644E" >Every earlier line stays intact.</text>
-<path d="M72 1005 L1728 1005" fill="none" stroke="#D7E1D9" stroke-width="2"/>
-<text x="72" y="1047" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#103A32" >Clear direction. Protected progress. Your permission.</text>
-<text x="1728" y="1047" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#51675F" text-anchor="end">Illustrative workflow · MIT</text>
+<rect x="0" y="0" width="1000" height="1140" rx="0" fill="#F6F5EF"/>
+<path d="M52 64 L73 36 L83 44 Z" fill="#0E644E"/><path d="M52 64 L73 36 L65 57 Z" fill="#103A32"/>
+<text x="98" y="63" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#103A32" text-anchor="start">Owner's Vision</text>
+<text x="948" y="61" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#51675F" text-anchor="end">Ammar Al Balkhi</text>
+<text x="52" y="141" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700" fill="#103A32" text-anchor="start">Keep the work aligned.</text>
+<text x="52" y="190" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="400" fill="#51675F" text-anchor="start">Protect the progress you already made.</text>
+<rect x="40" y="224" width="920" height="356" rx="24" fill="#FFFFFF" stroke="#D7E1D9" stroke-width="2"/>
+<circle cx="82" cy="269" r="22" fill="#103A32"/>
+<text x="82" y="279" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="120" y="282" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#103A32" text-anchor="start">The Hand checks the next step</text>
+<text x="68" y="334" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="400" fill="#51675F" text-anchor="start">Vision intact? Proposed work aligned?</text>
+<rect x="68" y="365" width="412" height="178" rx="16" fill="#E9F3EC"/>
+<path d="M92 406 l9 9 l18 -23" fill="none" stroke="#0E644E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="137" y="423" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="#0E644E" text-anchor="start">PASS</text>
+<text x="92" y="475" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="400" fill="#103A32" text-anchor="start">Authorized work</text>
+<text x="92" y="518" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="400" fill="#103A32" text-anchor="start">can continue.</text>
+<rect x="500" y="365" width="432" height="178" rx="16" fill="#FFF0DF"/>
+<path d="M526 394 v28 M542 394 v28" fill="none" stroke="#8A461B" stroke-width="6" stroke-linecap="round"/>
+<text x="571" y="423" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="#8A461B" text-anchor="start">PAUSE</text>
+<text x="526" y="475" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="400" fill="#103A32" text-anchor="start">Resolve the blocker</text>
+<text x="526" y="518" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="400" fill="#103A32" text-anchor="start">before proceeding.</text>
+<rect x="40" y="606" width="920" height="215" rx="24" fill="#FFFFFF" stroke="#D7E1D9" stroke-width="2"/>
+<circle cx="82" cy="651" r="22" fill="#103A32"/>
+<text x="82" y="661" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="120" y="664" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#103A32" text-anchor="start">At the next major step</text>
+<text x="68" y="719" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="400" fill="#51675F" text-anchor="start">Verified progress not recorded yet?</text>
+<text x="68" y="770" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="400" fill="#103A32" text-anchor="start">One short reminder to add it.</text>
+<rect x="40" y="847" width="920" height="215" rx="24" fill="#FFFFFF" stroke="#D7E1D9" stroke-width="2"/>
+<circle cx="82" cy="892" r="22" fill="#103A32"/>
+<text x="82" y="902" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="120" y="905" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#103A32" text-anchor="start">Only after you authorize</text>
+<text x="68" y="960" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="400" fill="#103A32" text-anchor="start">Concise lines are added to your vision.</text>
+<text x="68" y="1011" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#0E644E" text-anchor="start">Every earlier line stays intact.</text>
+<text x="52" y="1112" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#103A32" text-anchor="start">Your direction. Your progress. Your permission.</text>
 </svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title description">
+<title id="title">Owner's Vision</title>
+<desc id="description">Keep AI work aligned with your vision and completed work. The Hand returns PASS or PAUSE. Accomplishments are added only with owner authorization. Created by Ammar Al Balkhi.</desc>
+<metadata>Created by Ammar Al Balkhi. Owner's Vision.</metadata>
+<rect x="0" y="0" width="1280" height="640" rx="0" fill="#103A32"/>
+<text x="64" y="91" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#F6F5EF" text-anchor="start">Owner's Vision</text>
+<text x="64" y="206" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700" fill="#F6F5EF" text-anchor="start">Keep AI work aligned.</text>
+<text x="64" y="281" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="400" fill="#F6F5EF" text-anchor="start">With your vision.</text>
+<text x="64" y="333" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="400" fill="#F6F5EF" text-anchor="start">With what already works.</text>
+<rect x="870" y="144" width="346" height="268" rx="24" fill="#F6F5EF"/>
+<text x="1043" y="198" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#103A32" text-anchor="middle">Before new work</text>
+<rect x="894" y="221" width="298" height="70" rx="12" fill="#E9F3EC"/>
+<path d="M922 256 l9 9 l18 -23" fill="none" stroke="#0E644E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="969" y="269" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#0E644E" text-anchor="start">PASS</text>
+<rect x="894" y="311" width="298" height="70" rx="12" fill="#FFF0DF"/>
+<path d="M926 333 v28 M942 333 v28" fill="none" stroke="#8A461B" stroke-width="6" stroke-linecap="round"/>
+<text x="969" y="359" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#8A461B" text-anchor="start">PAUSE</text>
+<path d="M64 464 H1216" stroke="#5D8074" stroke-width="2"/>
+<text x="64" y="518" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" fill="#F6F5EF" text-anchor="start">Check → Remind → Add lines with your permission</text>
+<text x="64" y="594" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="400" fill="#F6F5EF" text-anchor="start">Ammar Al Balkhi · MIT</text>
+<text x="1216" y="594" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="400" fill="#F6F5EF" text-anchor="end">github.com/ammarbalkhi/owners-vision</text>
+</svg>
