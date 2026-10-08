@@ -40,4 +40,4 @@ The recorded receipt includes the exact requests and the SHA-256 of both instruc
 
 ## Limits
 
-The public repository URL was mapped to a local candidate copy during these trials. This does not test fetching the revised public repository. Reviewer unavailability was simulated on a host that supports subagents. Each case ran once, in one environment. No live flower project was edited. These trials supplement the older six cases; they do not replace or claim to rerun them. Instructions require the host agent to follow them and do not create an external enforcement mechanism.
+The public repository URL was mapped to a local candidate copy during these trials. This does not test fetching the revised public repository. Reviewer unavailability was simulated on a host that supports subagents. Each case ran once, in one environment. All trials used isolated, synthetic fixtures. These trials supplement the older six cases; they do not replace or claim to rerun them. Instructions require the host agent to follow them and do not create an external enforcement mechanism.

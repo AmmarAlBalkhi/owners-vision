@@ -11,7 +11,7 @@
     "The GitHub URL in case 01 was explicitly mapped to the local candidate, so this is not proof of a fresh public-URL installation.",
     "Case 07 simulated unavailable reviewer tools on a reviewer-capable host.",
     "These are nine single-run observations in one environment, not a universal reliability guarantee or a full rerun of the earlier six behavioral cases.",
-    "The live flower project was not modified or used as a test fixture."
+    "All trials used isolated, synthetic fixtures."
   ],
   "cases": [
     {
