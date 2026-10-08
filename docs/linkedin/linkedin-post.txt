@@ -10,7 +10,7 @@ It’s an open-source skill for AI coding agents. Before implementation, it requ
 
 It may be especially useful for vibe coders moving quickly through iterations who want a consistent check on the project’s direction.
 
-The 24-second video shows the decision flow.
+The picture shows when work can continue and when the agent must pause.
 
 Free and open source under MIT:
 https://github.com/ammarbalkhi/owners-vision

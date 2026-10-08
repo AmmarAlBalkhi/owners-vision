@@ -1,4 +1,5 @@
 {
+  "repository_reference_note": "Repository references were normalized to the current GitHub account name on 2026-10-08; recorded commands and requests are no longer verbatim. Test results, dates, commits and digests are unchanged. Original receipt: commit 6eb1438b7c52194422d5cf5fd81e78d9a40f5cf0.",
   "tested_on": "2026-10-07",
   "environment": {
     "os": "Windows",
@@ -7,9 +8,9 @@
     "skills_cli": "1.7.1",
     "python": "3.14.6"
   },
-  "source": "https://github.com/AmmarAlBalkhi/owners-vision",
+  "source": "https://github.com/ammarbalkhi/owners-vision",
   "source_commit": "0d73a7a6583ba0553e5d3a145d3cea263182e5df",
-  "command": "npx --yes skills@1.7.1 add AmmarAlBalkhi/owners-vision --skill owners-vision --agent universal claude-code gemini-cli opencode --copy --yes",
+  "command": "npx --yes skills@1.7.1 add ammarbalkhi/owners-vision --skill owners-vision --agent universal claude-code gemini-cli opencode --copy --yes",
   "telemetry_disabled": true,
   "discovery": {
     "count": 1,

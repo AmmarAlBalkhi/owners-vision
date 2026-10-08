@@ -34,4 +34,4 @@ The twelve executable checks verify the helper. They do not automatically run ag
 
 To prepare another fresh fixture set, copy `run_tests.py` to a separate sibling `tests/` folder alongside a copy of `owners-vision/`, then run it with `--prepare`. Preparation refuses to overwrite existing fixtures.
 
-Historical receipts retain the repository URLs and commands used when each trial ran. The current repository is [ammarbalkhi/owners-vision](https://github.com/ammarbalkhi/owners-vision).
+Repository references in historical receipts were updated to [ammarbalkhi/owners-vision](https://github.com/ammarbalkhi/owners-vision) on 2026-10-08. Recorded commands and requests reflect the account rename and are no longer verbatim. Test results, dates, tested commits, and digests are unchanged. The [original receipts](https://github.com/ammarbalkhi/owners-vision/tree/6eb1438b7c52194422d5cf5fd81e78d9a40f5cf0/tests/results) remain in Git history.

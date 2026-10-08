@@ -1,4 +1,5 @@
 {
+  "repository_reference_note": "Repository references were normalized to the current GitHub account name on 2026-10-08; recorded commands and requests are no longer verbatim. Test results, dates, commits and digests are unchanged. Original receipt: commit 6eb1438b7c52194422d5cf5fd81e78d9a40f5cf0.",
   "project": "Owner's Vision",
   "author": "Ammar Al Balkhi",
   "date": "2026-10-08",
@@ -18,7 +19,7 @@
     {
       "case": "01-new-use",
       "starting_state": "No vision or binding; owner describes the desired local red-mug catalogue, with no accounts, checkout, or network service.",
-      "request": "Use https://github.com/AmmarAlBalkhi/owners-vision for this project. I want a local catalogue displaying only red ceramic mugs, without accounts, checkout, or a network service. Do not implement the catalogue yet.",
+      "request": "Use https://github.com/ammarbalkhi/owners-vision for this project. I want a local catalogue displaying only red ceramic mugs, without accounts, checkout, or a network service. Do not implement the catalogue yet.",
       "outcome": "approval requested",
       "observation": "Requested one approval covering the destination, protected record, and mandatory Hand rule; no gate PASS or implementation.",
       "fresh_reviewer_launched_and_awaited": false,

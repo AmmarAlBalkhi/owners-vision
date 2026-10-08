@@ -8,7 +8,7 @@ Created by [Ammar Al Balkhi](https://github.com/ammarbalkhi) · MIT license · P
 
 [Give feedback or suggest an improvement](https://github.com/ammarbalkhi/owners-vision/issues/new/choose)
 
-Watch the [24-second PASS / FAIL overview](docs/linkedin/README.md): what gets checked, when authorized work can continue, and when implementation must pause.
+For sharing, use the [pictures and ready-to-paste LinkedIn post](docs/linkedin/README.md).
 
 ![Owner's Vision working flow: before implementation, the Hand returns PASS for aligned work or PAUSE for a checkpoint conflict. At the next major step it can remind the owner about verified accomplishments. After explicit authorization, the agent adds concise checkpoint lines and preserves all earlier text.](docs/demo.svg)
 
