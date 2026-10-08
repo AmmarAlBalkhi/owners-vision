@@ -145,7 +145,7 @@ function drawScene(n, t) {
 function svgFrame(n, t) {
   p = [`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="title desc">`,
     `<title id="title">Owner's Vision — ${esc(scenes[n].name.slice(3))}</title>`,
-    '<desc id="desc">Decision workflow for AI coding agents. PASS allows already-authorized work to continue after integrity and independent alignment checks. A failed or incomplete check requires PAUSE: stop implementation and report the blocker. No project scenario or people.</desc>',
+    '<desc id="desc">Decision workflow for AI coding agents. PASS allows already-authorized work to continue after integrity and independent alignment checks. A failed or incomplete check requires PAUSE: stop implementation and report the blocker.</desc>',
     "<metadata>Owner's Vision. Created by AmmarAlBalkhi.</metadata>"];
   drawScene(n, t); p.push('</svg>'); return p.join('\n');
 }

@@ -13,10 +13,10 @@ The skill's literal verdicts are `THE HAND OF THE OWNER — PASS` and `THE HAND 
 
 This is an animated explanation of the decision rules. The [full workflow](../demo.md) also covers the accomplishment reminder and additions made only with the owner's explicit permission.
 
-The silent MP4 is 24 seconds, 1080 × 1350, 24 fps, H.264. Text, decision symbols, and connecting lines carry the explanation. No project scenario, people, or faces appear. Its format falls within [LinkedIn's published video requirements](https://www.linkedin.com/help/linkedin/answer/a548372).
+The silent MP4 is 24 seconds, 1080 × 1350, 24 fps, H.264. Text, decision symbols, and connecting lines carry the explanation. Its format falls within [LinkedIn's published video requirements](https://www.linkedin.com/help/linkedin/answer/a548372).
 
 ## Edit the animation
 
 `render-demo.js` contains the complete editable vector scenes and timing. It requires Node.js, the `sharp` package, and FFmpeg. Set `VISION_FFMPEG` to the FFmpeg executable, then run `node render-demo.js`. Add `--stills` to render only the SVG and PNG artwork, or `--out PATH` to choose an output directory.
 
-`verification.json` records export checks. The skill instructions and authorization rules are unchanged.
+`verification.json` records export checks.

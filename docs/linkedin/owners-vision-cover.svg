@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-labelledby="title desc">
 <title id="title">Owner's Vision — the-check</title>
-<desc id="desc">Decision workflow for AI coding agents. PASS allows already-authorized work to continue after integrity and independent alignment checks. A failed or incomplete check requires PAUSE: stop implementation and report the blocker. No project scenario or people.</desc>
+<desc id="desc">Decision workflow for AI coding agents. PASS allows already-authorized work to continue after integrity and independent alignment checks. A failed or incomplete check requires PAUSE: stop implementation and report the blocker.</desc>
 <metadata>Owner's Vision. Created by AmmarAlBalkhi.</metadata>
 <rect x="0" y="0" width="1080" height="1350" rx="0" fill="#F6F4EC"/>
 <path d="M92 116 L117 78 L126 87 Z M92 116 L106 102 L117 78 L113 104 Z" fill="#14654D"/>
